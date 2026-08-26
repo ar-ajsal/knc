@@ -1,0 +1,2307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KNC Logistics Services &mdash; Integrated Logistics &amp; Freight Forwarding in Riyadh, Saudi Arabia</title>
+  <link rel="icon" type="image/png" href="images/logo.png.png">
+  <meta name="description"
+    content="KNC Logistics Solutions is a Foreign Investment Company (LLC) established in 2026 and headquartered in Riyadh, Saudi Arabia &mdash; delivering freight forwarding, customs clearance, inland and cross-border transport, project logistics, event logistics, rental, 4PL and SABER services.">
+
+  <!-- Open Graph / Twitter basics -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="KNC Logistics Services &mdash; Integrated Logistics in Riyadh, Saudi Arabia">
+  <meta property="og:description"
+    content="A Foreign Investment Company (LLC) headquartered in Riyadh, delivering integrated logistics, freight forwarding, customs clearance and project logistics solutions.">
+  <meta property="og:image" content="images/knc_logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <style>
+    /* ======================== TOKENS ========================
+       Base palette inherited from the main Mastery & Precise site.
+       Accent colours sampled from the supplied KNC Corporate Profile. */
+    :root {
+      --bg: #faf7f2;
+      --bg-alt: #f3ede3;
+      --bg-card: #ffffff;
+      --navy: #0d1a24;
+      --navy-mid: #1c3244;
+      --knc: #e16b23;
+      --knc-lt: #ef9a46;
+      --knc-deep: #c4551a;
+      --knc-blue: #003c6c;
+      --knc-gw: rgba(225, 107, 35, 0.14);
+      --text: #1a2e3d;
+      --muted: #5a7388;
+      --line: rgba(13, 26, 36, 0.1);
+      --line-b: rgba(13, 26, 36, 0.16);
+      --shadow-sm: 0 2px 12px rgba(13, 26, 36, 0.08);
+      --shadow-md: 0 8px 40px rgba(13, 26, 36, 0.12);
+      --shadow-lg: 0 20px 64px rgba(13, 26, 36, 0.14);
+      --radius: 12px;
+      --radius-lg: 24px;
+      --tr: 0.32s cubic-bezier(.4, 0, .2, 1);
+    }
+
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Work Sans", sans-serif;
+      font-weight: 400;
+      line-height: 1.65;
+      overflow-x: hidden
+    }
+
+    mark {
+      background: linear-gradient(120deg, var(--knc-gw), rgba(239, 154, 70, 0.15));
+      color: var(--knc-deep);
+      padding: 0 0.15em;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important
+      }
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: "Fraunces", serif;
+      font-weight: 500;
+      line-height: 1.1;
+      letter-spacing: -.02em
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none
+    }
+
+    img {
+      display: block;
+      width: 100%
+    }
+
+    .eyebrow {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: .7rem;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: var(--knc);
+      display: inline-flex;
+      align-items: center;
+      gap: .7rem
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 26px;
+      height: 1.5px;
+      background: linear-gradient(90deg, var(--knc), transparent);
+      display: inline-block
+    }
+
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 5vw
+    }
+
+    /* ======================== CANVAS ======================== */
+    #bg-canvas {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      opacity: .35
+    }
+
+    /* ======================== HEADER ======================== */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 200;
+      background: rgba(250, 247, 242, 0.82);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid transparent;
+      transition: background var(--tr), border-color var(--tr), box-shadow var(--tr)
+    }
+
+    header.scrolled {
+      background: rgba(250, 247, 242, 0.94);
+      border-bottom-color: var(--line);
+      box-shadow: var(--shadow-sm)
+    }
+
+    nav.wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 1.2rem;
+      padding-bottom: 1.2rem;
+      transition: padding var(--tr);
+    }
+
+    header.scrolled nav.wrap {
+      padding-top: 0.6rem;
+      padding-bottom: 0.6rem;
+    }
+
+    .logo {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 0.7rem;
+      padding: 0.2rem 0
+    }
+
+    .logo img {
+      height: 62px;
+      width: auto;
+      object-fit: contain;
+      transition: height var(--tr)
+    }
+
+    header.scrolled .logo img {
+      height: 44px
+    }
+
+    .logo-text-block {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      line-height: 1.15
+    }
+
+    .logo-main-name {
+      font-family: "Fraunces", serif;
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--navy);
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+      transition: font-size var(--tr)
+    }
+
+    .logo-sub {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      white-space: nowrap;
+      transition: opacity var(--tr)
+    }
+
+    .logo-sub span:first-child {
+      height: 1px;
+      width: 18px;
+      background: linear-gradient(90deg, transparent, #c9870a)
+    }
+
+    .logo-sub span:last-child {
+      height: 1px;
+      width: 18px;
+      background: linear-gradient(90deg, #c9870a, transparent)
+    }
+
+    .logo-sub-text {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.48rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #c9870a;
+      font-weight: 600
+    }
+
+    .logo-tagline {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.4rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--navy);
+      opacity: 0.6;
+      white-space: nowrap;
+      transition: opacity var(--tr)
+    }
+
+    .navlinks {
+      display: flex;
+      gap: 2rem;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: .76rem;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      align-items: center
+    }
+
+    .navlinks a:not(.nav-cta) {
+      color: var(--muted);
+      position: relative;
+      padding-bottom: 3px;
+      transition: color var(--tr)
+    }
+
+    .navlinks a:not(.nav-cta)::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0%;
+      height: 1.5px;
+      background: linear-gradient(90deg, var(--knc), var(--knc-lt));
+      transition: width .3s ease
+    }
+
+    .navlinks a:not(.nav-cta):hover {
+      color: var(--navy)
+    }
+
+    .navlinks a:not(.nav-cta):hover::after,
+    .navlinks a[aria-current="page"]::after {
+      width: 100%
+    }
+
+    .navlinks a[aria-current="page"] {
+      color: var(--navy)
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--knc), var(--knc-lt));
+      color: #fff !important;
+      font-weight: 600;
+      padding: .52rem 1.3rem;
+      border-radius: 50px;
+      box-shadow: 0 4px 16px var(--knc-gw);
+      transition: transform var(--tr), box-shadow var(--tr) !important
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px var(--knc-gw)
+    }
+
+    .navmenu-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 210;
+      padding: 8px
+    }
+
+    .navmenu-toggle span {
+      width: 22px;
+      height: 1.5px;
+      background: var(--navy);
+      display: block;
+      transition: transform .3s, opacity .3s
+    }
+
+    .navmenu-toggle.active span:nth-child(1) {
+      transform: translateY(6.5px) rotate(45deg)
+    }
+
+    .navmenu-toggle.active span:nth-child(2) {
+      opacity: 0
+    }
+
+    .navmenu-toggle.active span:nth-child(3) {
+      transform: translateY(-6.5px) rotate(-45deg)
+    }
+
+    /* ======================== BUTTONS ======================== */
+    .btn {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: .8rem;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      font-weight: 600;
+      padding: .9rem 1.85rem;
+      border-radius: 50px;
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      transition: transform var(--tr), box-shadow var(--tr);
+      cursor: pointer;
+      border: none
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--knc-deep) 0%, var(--knc) 55%, var(--knc-lt) 100%);
+      color: #fff;
+      box-shadow: 0 6px 24px var(--knc-gw)
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 40px rgba(225, 107, 35, .32)
+    }
+
+    .btn-ghost {
+      background: #fff;
+      color: var(--navy);
+      border: 1.5px solid var(--line-b)
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--knc);
+      color: var(--knc-deep);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-sm)
+    }
+
+    /* ======================== REVEAL ======================== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .75s ease, transform .75s ease
+    }
+
+    .reveal.in {
+      opacity: 1;
+      transform: translateY(0)
+    }
+
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-28px);
+      transition: opacity .75s ease, transform .75s ease
+    }
+
+    .reveal-left.in {
+      opacity: 1;
+      transform: translateX(0)
+    }
+
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(28px);
+      transition: opacity .75s ease, transform .75s ease
+    }
+
+    .reveal-right.in {
+      opacity: 1;
+      transform: translateX(0)
+    }
+
+    .reveal-scale {
+      opacity: 0;
+      transform: scale(0.92);
+      transition: opacity .7s ease, transform .7s ease
+    }
+
+    .reveal-scale.in {
+      opacity: 1;
+      transform: scale(1)
+    }
+
+    /* ======================== SECTIONS ======================== */
+    section {
+      padding: 7rem 0;
+      position: relative;
+      z-index: 1
+    }
+
+    section.alt {
+      background: var(--bg-alt)
+    }
+
+    .section-head {
+      max-width: 680px;
+      margin-bottom: 3.5rem
+    }
+
+    .section-head.centered {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center
+    }
+
+    .section-head.centered .eyebrow {
+      justify-content: center
+    }
+
+    .section-head h2 {
+      font-size: clamp(2rem, 3.5vw, 2.9rem);
+      margin-top: 1rem;
+      color: var(--navy)
+    }
+
+    .section-head h2 em {
+      font-style: italic;
+      color: var(--knc)
+    }
+
+    .section-head p {
+      color: var(--muted);
+      margin-top: 1rem;
+      font-size: 1.02rem;
+      line-height: 1.75
+    }
+
+    /* ======================== PRELOADER ======================== */
+    #preloader {
+      position: fixed;
+      inset: 0;
+      background: #faf7f2;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
+    }
+
+    #preloader.hide {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .loader-logo {
+      width: 120px;
+      animation: pulse-loader 1.2s infinite alternate ease-in-out;
+    }
+
+    @keyframes pulse-loader {
+      from {
+        transform: scale(0.94);
+        opacity: .65
+      }
+
+      to {
+        transform: scale(1.04);
+        opacity: 1
+      }
+    }
+
+    /* ======================== HERO ======================== */
+    .knc-hero {
+      padding: 11rem 0 5rem;
+      background: linear-gradient(160deg, #fdfaf6 0%, #f7ede2 55%, #faf7f2 100%);
+      overflow: hidden
+    }
+
+    .knc-hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 4rem;
+      align-items: center
+    }
+
+    .knc-hero h1 {
+      font-size: clamp(2.6rem, 5vw, 4.4rem);
+      color: var(--navy);
+      margin: 1.4rem 0 1.5rem;
+      line-height: 1.06
+    }
+
+    .knc-hero h1 em {
+      font-style: italic;
+      background: linear-gradient(135deg, var(--knc-deep), var(--knc-lt));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text
+    }
+
+    .knc-hero p.lede {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 40em;
+      margin-bottom: 2.2rem;
+      line-height: 1.8
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap
+    }
+
+    /* Organic hero frame — adapted from the template's hero-organic-frame */
+    .hero-visual {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center
+    }
+
+    .hero-organic {
+      position: relative;
+      width: 100%;
+      max-width: 430px;
+      aspect-ratio: 1 / 1.12;
+      border-radius: 220px 220px 220px 18px;
+      overflow: hidden;
+      background: var(--bg-alt);
+      box-shadow: 22px 22px 64px rgba(225, 107, 35, .16);
+      z-index: 2
+    }
+
+    .hero-organic img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+    }
+
+    /* Layered curves echoing the KNC profile cover artwork */
+    .hero-swoosh {
+      position: absolute;
+      top: -8%;
+      right: -22%;
+      width: 78%;
+      height: 118%;
+      z-index: 1;
+      pointer-events: none;
+      opacity: .9
+    }
+
+    .hero-logo-badge {
+      position: absolute;
+      bottom: 6%;
+      left: -4%;
+      z-index: 3;
+      background: #fff;
+      border-radius: 18px;
+      padding: 1rem 1.15rem;
+      box-shadow: 0 18px 44px rgba(13, 26, 36, .16);
+      border: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      gap: .85rem;
+      max-width: 15rem;
+      animation: float-badge 6s ease-in-out infinite
+    }
+
+    .hero-logo-badge img {
+      width: 46px;
+      height: auto;
+      flex-shrink: 0
+    }
+
+    .hero-logo-badge-label {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: .58rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--muted)
+    }
+
+    .hero-logo-badge-value {
+      font-family: "Fraunces", serif;
+      font-size: .95rem;
+      color: var(--navy);
+      line-height: 1.25
+    }
+
+    @keyframes float-badge {
+
+      0%,
+      100% {
+        transform: translateY(0)
+      }
+
+      50% {
+        transform: translateY(-9px)
+      }
+    }
+
+    /* Fact cards — adapted from the template's hero bento row */
+    .hero-facts {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+      margin-top: 4.5rem
+    }
+
+    .fact-card {
+      background: var(--bg-card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      padding: 1.6rem 1.5rem;
+      box-shadow: var(--shadow-sm);
+      transition: transform var(--tr), box-shadow var(--tr), border-color var(--tr)
+    }
+
+    .fact-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(225, 107, 35, .35);
+      box-shadow: var(--shadow-md)
+    }
+
+    .fact-card.dark {
+      background: linear-gradient(140deg, var(--navy), var(--navy-mid));
+      border-color: transparent
+    }
+
+    .fact-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--knc-gw);
+      color: var(--knc-deep);
+      display: grid;
+      place-items: center;
+      margin-bottom: 1rem
+    }
+
+    .fact-card.dark .fact-icon {
+      background: rgba(255, 255, 255, .12);
+      color: var(--knc-lt)
+    }
+
+    .fact-label {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: .62rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--muted)
+    }
+
+    .fact-card.dark .fact-label {
+      color: rgba(255, 255, 255, .55)
+    }
+
+    .fact-value {
+      font-family: "Fraunces", serif;
+      font-size: 1.12rem;
+      color: var(--navy);
+      margin-top: .35rem;
+      line-height: 1.3
+    }
+
+    .fact-card.dark .fact-value {
+      color: #fff
+    }
+
+    /* ======================== MARQUEE ======================== */
+    .marquee-section {
+      padding: 2rem 0;
+      background: var(--navy);
+      overflow: hidden;
+      border-top: 1px solid rgba(255, 255, 255, .06);
+      border-bottom: 1px solid rgba(255, 255, 255, .06);
+      position: relative;
+      z-index: 1
+    }
+
+    .marquee-track {
+      display: flex;
+      gap: 3rem;
+      animation: marquee 30s linear infinite;
+      width: max-content
+    }
+
+    .marquee-item {
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: .74rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .55);
+      white-space: nowrap
+    }
+
+    .marquee-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--knc-lt);
+      flex-shrink: 0
+    }
+
+    @keyframes marquee {
+      from {
+        transform: translateX(0)
+      }
+
+      to {
+        transform: translateX(-50%)
+      }
+    }
+
+    /* ============ SPLIT SECTIONS (template business-modern-grid) ============ */
+    .split-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 4.5rem;
+      align-items: center
+    }
+
+    .split-grid.reverse .split-visual {
+      order: -1
+    }
+
+    .split-copy h2 {
+      font-size: clamp(1.9rem, 3.2vw, 2.7rem);
+      color: var(--navy);
+      margin: 1rem 0 1.5rem
+    }
+
+    .split-copy h2 em {
+      font-style: italic;
+      color: var(--knc)
+    }
+
+    .split-copy p {
+      color: var(--muted);
+      line-height: 1.85;
+      margin-bottom: 1.1rem
+    }
+
+    .img-frame {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg)
+    }
+
+    .img-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+    }
+
+    .img-frame.portrait {
+      aspect-ratio: 3 / 4
+    }
+
+    .split-visual {
+      position: relative
+    }
+
+    /* Floating badge — adapted from the template's experience-badge */
+    .float-badge {
+      position: absolute;
+      bottom: 28px;
+      left: -26px;
+      background: #fff;
+      padding: 1.1rem 1.4rem;
+      border-radius: 18px;
+      box-shadow: 0 18px 44px rgba(13, 26, 36, .18);
+      border: 1px solid var(--line);
+      max-width: 16rem;
+      z-index: 5;
+      animation: float-badge 7s ease-in-out infinite
+    }
+
+    .float-badge-label {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: .6rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--knc-deep)
+    }
+
+    .float-badge-text {
+      font-size: .88rem;
+      color: var(--navy);
+      margin-top: .3rem;
+      line-height: 1.5
+    }
+
+    /* Feature chips with check icons (template business-features-list) */
+    .feature-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+      margin-top: 1.8rem;
+      list-style: none
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: .55rem;
+      background: var(--bg-card);
+      border: 1px solid var(--line);
+      border-radius: 50px;
+      padding: .5rem .95rem .5rem .6rem;
+      font-size: .84rem;
+      font-weight: 500;
+      color: var(--navy);
+      transition: border-color var(--tr), transform var(--tr)
+    }
+
+    .feature-item:hover {
+      border-color: rgba(225, 107, 35, .4);
+      transform: translateY(-2px)
+    }
+
+    .check-icon {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--knc-gw);
+      color: var(--knc-deep);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0
+    }
+
+    /* Stacked capability list (Professional Team) */
+    .cap-list {
+      list-style: none;
+      display: grid;
+      gap: .85rem;
+      margin-top: 1.8rem
+    }
+
+    .cap-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: .8rem;
+      font-size: .96rem;
+      color: var(--navy)
+    }
+
+    /* ============ VISION & MISSION (template bento-grid) ============ */
+    .vm-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 1.5rem
+    }
+
+    .vm-card {
+      border-radius: var(--radius-lg);
+      padding: 2.6rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      box-shadow: var(--shadow-sm);
+      transition: transform var(--tr), box-shadow var(--tr)
+    }
+
+    .vm-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md)
+    }
+
+    .vm-card.dark {
+      background: linear-gradient(140deg, var(--navy) 0%, var(--navy-mid) 100%);
+      color: #fff
+    }
+
+    .vm-card.light {
+      background: var(--bg-card);
+      border: 1px solid var(--line)
+    }
+
+    .vm-card h3 {
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 600;
+      font-size: 1.7rem;
+      margin: .9rem 0 1rem;
+      letter-spacing: -.01em
+    }
+
+    .vm-card.dark h3 {
+      color: #fff
+    }
+
+    .vm-card.light h3 {
+      color: var(--navy)
+    }
+
+    .vm-card p {
+      line-height: 1.85;
+      font-size: .98rem
+    }
+
+    .vm-card.dark p {
+      color: rgba(255, 255, 255, .72)
+    }
+
+    .vm-card.light p {
+      color: var(--muted)
+    }
+
+    .vm-card.dark .eyebrow {
+      color: var(--knc-lt)
+    }
+
+    .vm-card.dark .eyebrow::before {
+      background: linear-gradient(90deg, var(--knc-lt), transparent)
+    }
+
+    .vm-image {
+      grid-column: span 2;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      position: relative;
+      aspect-ratio: 21 / 7;
+      box-shadow: var(--shadow-md)
+    }
+
+    .vm-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 42%
+    }
+
+    .vm-image-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(225, 107, 35, .82) 0%, rgba(225, 107, 35, .35) 45%, transparent 75%);
+      display: flex;
+      align-items: center;
+      padding: 0 clamp(1.5rem, 5vw, 4rem)
+    }
+
+    .vm-image-overlay p {
+      font-family: "Fraunces", serif;
+      font-style: italic;
+      font-size: clamp(1.05rem, 2vw, 1.6rem);
+      color: #fff;
+      max-width: 22em;
+      line-height: 1.45;
+      text-shadow: 0 2px 18px rgba(0, 0, 0, .3)
+    }
+
+    /* ============ SERVICES (template service-box-card grid) ============ */
+    .svc-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem
+    }
+
+    .svc-card {
+      background: var(--bg-card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      padding: 2rem 1.6rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.1rem;
+      min-height: 11rem;
+      transition: transform var(--tr), box-shadow var(--tr), border-color var(--tr), background var(--tr)
+    }
+
+    .svc-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(225, 107, 35, .45);
+      background: linear-gradient(160deg, #fff, #fdf4ec);
+      box-shadow: 0 14px 34px rgba(225, 107, 35, .14)
+    }
+
+    .svc-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: var(--knc-gw);
+      color: var(--knc-deep);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      transition: background var(--tr), color var(--tr)
+    }
+
+    .svc-card:hover .svc-icon {
+      background: linear-gradient(135deg, var(--knc), var(--knc-lt));
+      color: #fff
+    }
+
+    .svc-card h3 {
+      font-size: 1.08rem;
+      color: var(--navy);
+      line-height: 1.3
+    }
+
+    /* ============ WHY KNC (template bento-grid) ============ */
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 1.5rem;
+      align-items: stretch
+    }
+
+    .why-statement {
+      background: linear-gradient(140deg, var(--navy) 0%, var(--navy-mid) 100%);
+      border-radius: var(--radius-lg);
+      padding: 2.8rem;
+      color: #fff;
+      box-shadow: var(--shadow-lg)
+    }
+
+    .why-statement blockquote {
+      font-family: "Fraunces", serif;
+      font-size: clamp(1.25rem, 2.2vw, 1.7rem);
+      line-height: 1.45;
+      color: #fff;
+      padding-left: 1.4rem;
+      border-left: 3px solid;
+      border-image: linear-gradient(180deg, var(--knc), var(--knc-lt)) 1
+    }
+
+    .why-list {
+      list-style: none;
+      display: grid;
+      gap: .7rem;
+      margin-top: 2.2rem
+    }
+
+    .why-list li {
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: .9rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, .88);
+      padding: .8rem 1rem;
+      background: rgba(255, 255, 255, .06);
+      border: 1px solid rgba(255, 255, 255, .09);
+      border-radius: var(--radius);
+      transition: background var(--tr), transform var(--tr)
+    }
+
+    .why-list li:hover {
+      background: rgba(255, 255, 255, .11);
+      transform: translateX(5px)
+    }
+
+    .why-list .check-icon {
+      background: rgba(239, 154, 70, .22);
+      color: var(--knc-lt)
+    }
+
+    .why-visuals {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      gap: 1.5rem
+    }
+
+    .why-visuals .img-frame {
+      height: 100%;
+      min-height: 12rem
+    }
+
+    /* ======================== CONTACT ======================== */
+    /* ======================== SKYLINE BAND ======================== */
+    .skyline-band {
+      position: relative;
+      height: clamp(240px, 34vw, 420px);
+      overflow: hidden;
+      z-index: 1
+    }
+
+    .skyline-band img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+    }
+
+    .skyline-band::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(13, 26, 36, .12) 0%, rgba(13, 26, 36, .55) 55%, rgba(13, 26, 36, .82) 100%)
+    }
+
+    .skyline-caption {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 2;
+      padding-bottom: 2.6rem
+    }
+
+    .skyline-caption .eyebrow {
+      color: var(--knc-lt)
+    }
+
+    .skyline-caption .eyebrow::before {
+      background: linear-gradient(90deg, var(--knc-lt), transparent)
+    }
+
+    .skyline-caption p {
+      font-family: "Fraunces", serif;
+      font-size: clamp(1.35rem, 2.9vw, 2.15rem);
+      line-height: 1.3;
+      color: #fff;
+      margin-top: .9rem;
+      max-width: 22em;
+      letter-spacing: -.01em
+    }
+
+    /* ======================== CONTACT ======================== */
+    .contact-section {
+      background: var(--bg-alt);
+      position: relative;
+      overflow: hidden
+    }
+
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+      position: relative;
+      z-index: 2
+    }
+
+    .contact-left-h {
+      font-size: clamp(2rem, 3.4vw, 2.8rem);
+      color: var(--navy);
+      margin: 1rem 0 1.2rem
+    }
+
+    .contact-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 2rem
+    }
+
+    .contact-card {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      padding: 1.3rem 1.5rem;
+      background: var(--bg-card);
+      border: 1.5px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      transition: border-color var(--tr), transform var(--tr), box-shadow var(--tr)
+    }
+
+    .contact-card:hover {
+      border-color: var(--knc);
+      transform: translateX(6px);
+      box-shadow: var(--shadow-md)
+    }
+
+    .contact-card-icon {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, rgba(225, 107, 35, .14), rgba(225, 107, 35, .04));
+      border: 1.5px solid rgba(225, 107, 35, .22);
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      color: var(--knc-deep);
+      flex-shrink: 0
+    }
+
+    .contact-card-label {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: .68rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted)
+    }
+
+    .contact-card-value {
+      font-family: "Fraunces", serif;
+      font-size: 1.05rem;
+      color: var(--navy);
+      margin-top: .1rem;
+      word-break: break-word
+    }
+
+    .contact-cta-block {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+      border-radius: var(--radius-lg);
+      padding: 3rem;
+      text-align: center;
+      box-shadow: var(--shadow-lg)
+    }
+
+    .contact-cta-block .cta-mark {
+      width: 74px;
+      margin: 0 auto 1.4rem;
+      filter: brightness(0) invert(1);
+      opacity: .92
+    }
+
+    .contact-cta-block h3 {
+      font-size: 1.8rem;
+      color: #fff;
+      margin-bottom: 1rem
+    }
+
+    .contact-cta-block p {
+      color: rgba(255, 255, 255, .65);
+      margin-bottom: 2rem;
+      line-height: 1.75
+    }
+
+    .contact-cta-block .btn-primary {
+      margin: 0 auto
+    }
+
+    .contact-location {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      margin-top: 1.8rem;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: .74rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--knc-deep);
+      font-weight: 600
+    }
+
+    /* ======================== FOOTER ======================== */
+    footer {
+      padding: 4.5rem 0 3rem;
+      background: var(--navy);
+      border-top: 1px solid rgba(255, 255, 255, .06);
+      position: relative;
+      z-index: 1
+    }
+
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem
+    }
+
+    .footer-brand p {
+      color: rgba(255, 255, 255, .5);
+      font-size: .92rem;
+      line-height: 1.8;
+      max-width: 26em;
+      margin-top: 1rem
+    }
+
+    .footer-col h4 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: .7rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--knc-lt);
+      margin-bottom: 1.2rem
+    }
+
+    .footer-col ul {
+      list-style: none
+    }
+
+    .footer-col ul li {
+      margin-bottom: .7rem
+    }
+
+    .footer-col ul a,
+    .footer-col ul span {
+      color: rgba(255, 255, 255, .5);
+      font-size: .9rem;
+      transition: color var(--tr)
+    }
+
+    .footer-col ul a:hover {
+      color: var(--knc-lt)
+    }
+
+    .footer-bottom {
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, .07);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap
+    }
+
+    .footer-bottom p {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: .72rem;
+      letter-spacing: .07em;
+      color: rgba(255, 255, 255, .4)
+    }
+
+    .footer-tagline {
+      font-family: "Fraunces", serif;
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--knc-lt)
+    }
+
+    /* ======================== RESPONSIVE ======================== */
+    @media(max-width:1024px) {
+      .hero-facts {
+        grid-template-columns: 1fr 1fr
+      }
+
+      .svc-grid {
+        grid-template-columns: 1fr 1fr
+      }
+    }
+
+    @media(max-width:900px) {
+      .navlinks {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: min(80vw, 340px);
+        background: rgba(250, 247, 242, .97);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 2rem;
+        padding: 2rem 2.8rem;
+        transform: translateX(110%);
+        transition: transform .4s cubic-bezier(.4, 0, .2, 1);
+        border-left: 1.5px solid var(--line-b);
+        box-shadow: -20px 0 60px rgba(13, 26, 36, .15)
+      }
+
+      .navlinks.open {
+        transform: translateX(0)
+      }
+
+      .navlinks a {
+        font-size: 1.05rem;
+        color: var(--navy)
+      }
+
+      .nav-cta {
+        margin-top: 1rem
+      }
+
+      .navmenu-toggle {
+        display: flex
+      }
+
+      header .logo img {
+        height: 52px
+      }
+
+      header.scrolled .logo img {
+        height: 36px
+      }
+
+      header.scrolled .logo-text-block .logo-main-name {
+        font-size: 0.9rem
+      }
+
+      .knc-hero {
+        padding-top: 9rem
+      }
+
+      .knc-hero-grid,
+      .split-grid,
+      .contact-inner {
+        grid-template-columns: 1fr;
+        gap: 3rem
+      }
+
+      .split-grid.reverse .split-visual {
+        order: 0
+      }
+
+      .hero-visual {
+        margin-top: 1rem
+      }
+
+      .hero-organic {
+        max-width: 360px
+      }
+
+      .hero-swoosh {
+        display: none
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr
+      }
+
+      .why-visuals {
+        grid-template-rows: auto;
+        grid-template-columns: 1fr 1fr
+      }
+
+      .vm-grid {
+        grid-template-columns: 1fr
+      }
+
+      .vm-image {
+        grid-column: span 1;
+        aspect-ratio: 16 / 9
+      }
+
+      .vm-image-overlay {
+        background: linear-gradient(90deg, rgba(225, 107, 35, .88) 0%, rgba(225, 107, 35, .5) 70%, rgba(225, 107, 35, .2) 100%)
+      }
+
+      .float-badge {
+        left: 12px;
+        bottom: 12px;
+        max-width: 14rem
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr 1fr
+      }
+    }
+
+    @media(max-width:560px) {
+      section {
+        padding: 5rem 0
+      }
+
+      .knc-hero h1 {
+        font-size: 2.4rem
+      }
+
+      .hero-facts {
+        grid-template-columns: 1fr;
+        margin-top: 3rem
+      }
+
+      .svc-grid {
+        grid-template-columns: 1fr
+      }
+
+      .why-visuals {
+        grid-template-columns: 1fr
+      }
+
+      .vm-card,
+      .why-statement,
+      .contact-cta-block {
+        padding: 1.9rem
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr
+      }
+
+      .hero-logo-badge {
+        left: 0;
+        bottom: 2%;
+        max-width: 13rem;
+        padding: .8rem .9rem
+      }
+
+      .float-badge {
+        position: static;
+        margin-top: 1rem;
+        max-width: none;
+        animation: none
+      }
+
+      .cta-row .btn {
+        width: 100%;
+        justify-content: center
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- PRELOADER -->
+  <div id="preloader">
+    <img src="images/knc_logo.png" alt="KNC logo" class="loader-logo" width="520" height="506">
+  </div>
+
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- HEADER -->
+  <header id="site-header">
+    <nav class="wrap" aria-label="Primary">
+      <a href="index.html" class="logo" aria-label="Mastery &amp; Precise Business House — home">
+        <img src="images/logo.png-removebg-preview.png" alt="Mastery &amp; Precise Business House logo" width="537"
+          height="318">
+        <span class="logo-text-block">
+          <span class="logo-main-name">MASTERY &amp; PRECISE</span>
+          <span class="logo-sub">
+            <span></span>
+            <span class="logo-sub-text">Business House Private Limited</span>
+            <span></span>
+          </span>
+          <span class="logo-tagline">Mastery in Vision. Precise in Action.</span>
+        </span>
+      </a>
+      <button class="navmenu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="navlinks" id="navlinks">
+        <a href="index.html">Main Site</a>
+        <a href="#about" aria-current="page">About KNC</a>
+        <a href="#vision">Vision &amp; Mission</a>
+        <a href="#services">Services</a>
+        <a href="#why">Why KNC</a>
+        <a href="#contact" class="nav-cta">Contact Us</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="knc-hero" aria-labelledby="knc-hero-title">
+      <div class="wrap">
+        <div class="knc-hero-grid">
+          <div>
+            <span class="eyebrow">KNC Logistics Services &middot; Riyadh, Saudi Arabia</span>
+            <h1 id="knc-hero-title">One partner.<br><em>Complete logistics.</em></h1>
+            <p class="lede"><mark>KNC Logistics Solutions</mark> is a Foreign Investment Company (LLC), established in
+              2026 and headquartered in Riyadh, Kingdom of Saudi Arabia. Since our inception, we have been committed to
+              delivering innovative, reliable, and value-driven business solutions that empower organizations to achieve
+              operational excellence and sustainable growth.</p>
+            <div class="cta-row">
+              <a href="#contact" class="btn btn-primary">
+                Talk to Our Team
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  aria-hidden="true">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
+              <a href="#services" class="btn btn-ghost">Explore Services</a>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <svg class="hero-swoosh" viewBox="0 0 300 520" fill="none" aria-hidden="true" focusable="false">
+              <defs>
+                <linearGradient id="kncSwooshA" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#c4551a" />
+                  <stop offset="1" stop-color="#ef9a46" />
+                </linearGradient>
+              </defs>
+              <path d="M40 -30C150 80 20 200 110 320S60 470 30 560" stroke="url(#kncSwooshA)" stroke-width="52"
+                stroke-linecap="round" opacity=".9" />
+              <path d="M118 -30C228 90 98 210 188 330S138 480 108 560" stroke="#e16b23" stroke-width="38"
+                stroke-linecap="round" opacity=".5" />
+              <path d="M186 -30C296 100 166 215 256 335S206 485 176 560" stroke="#ef9a46" stroke-width="24"
+                stroke-linecap="round" opacity=".3" />
+            </svg>
+
+            <div class="hero-organic reveal-scale">
+              <img src="images/knc_hero_building.jpg"
+                alt="Modern glass-fronted commercial office tower photographed from below" width="1100"
+                height="1650" loading="eager">
+            </div>
+
+            <div class="hero-logo-badge">
+              <img src="images/knc_mark.png" alt="" aria-hidden="true" width="260" height="271">
+              <span>
+                <span class="hero-logo-badge-label">Headquarters</span>
+                <span class="hero-logo-badge-value">Riyadh, Kingdom of Saudi Arabia</span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- KEY FACTS -->
+        <div class="hero-facts">
+          <div class="fact-card reveal">
+            <div class="fact-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="5" width="18" height="16" rx="2" />
+                <path d="M8 3v4M16 3v4M3 11h18" />
+              </svg>
+            </div>
+            <div class="fact-label">Established</div>
+            <div class="fact-value">2026</div>
+          </div>
+          <div class="fact-card reveal">
+            <div class="fact-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z" />
+                <circle cx="12" cy="10" r="2.6" />
+              </svg>
+            </div>
+            <div class="fact-label">Headquarters</div>
+            <div class="fact-value">Riyadh, Saudi Arabia</div>
+          </div>
+          <div class="fact-card reveal">
+            <div class="fact-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 21V6.5L12 3l8 3.5V21" />
+                <path d="M9 21v-6h6v6M4 21h16" />
+              </svg>
+            </div>
+            <div class="fact-label">Entity Type</div>
+            <div class="fact-value">Foreign Investment Company (LLC)</div>
+          </div>
+          <div class="fact-card dark reveal">
+            <div class="fact-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 3l9 4.5-9 4.5L3 7.5 12 3Z" />
+                <path d="M3 12l9 4.5 9-4.5M3 16.5L12 21l9-4.5" />
+              </svg>
+            </div>
+            <div class="fact-label">Service Lines</div>
+            <div class="fact-value">Eight core logistics services</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee-section">
+      <div class="marquee-track">
+        <div class="marquee-item">
+          <div class="marquee-dot"></div>Freight Forwarding
+        </div>
+        <div class="marquee-item">
+          <div class="marquee-dot"></div>Customs Clearance
+        </div>
+        <div class="marquee-item">
+          <div class="marquee-dot"></div>In Land &amp; Cross Border Transport
+        </div>
+        <div class="marquee-item">
+          <div class="marquee-dot"></div>Project Logistics
+        </div>
+        <div class="marquee-item">
+          <div class="marquee-dot"></div>Event Logistics
+        </div>
+        <div class="marquee-item">
+          <div class="marquee-dot"></div>Rental Services
+        </div>
+        <div class="marquee-item">
+          <div class="marquee-dot"></div>4PL Services
+        </div>
+        <div class="marquee-item">
+          <div class="marquee-dot"></div>SABER Services
+        </div>
+        <div class="marquee-item" aria-hidden="true">
+          <div class="marquee-dot"></div>Freight Forwarding
+        </div>
+        <div class="marquee-item" aria-hidden="true">
+          <div class="marquee-dot"></div>Customs Clearance
+        </div>
+        <div class="marquee-item" aria-hidden="true">
+          <div class="marquee-dot"></div>In Land &amp; Cross Border Transport
+        </div>
+        <div class="marquee-item" aria-hidden="true">
+          <div class="marquee-dot"></div>Project Logistics
+        </div>
+        <div class="marquee-item" aria-hidden="true">
+          <div class="marquee-dot"></div>Event Logistics
+        </div>
+        <div class="marquee-item" aria-hidden="true">
+          <div class="marquee-dot"></div>Rental Services
+        </div>
+        <div class="marquee-item" aria-hidden="true">
+          <div class="marquee-dot"></div>4PL Services
+        </div>
+        <div class="marquee-item" aria-hidden="true">
+          <div class="marquee-dot"></div>SABER Services
+        </div>
+      </div>
+    </div>
+
+    <!-- WHO WE ARE -->
+    <section id="about" aria-labelledby="about-title">
+      <div class="wrap">
+        <div class="split-grid">
+          <div class="split-copy reveal-left">
+            <span class="eyebrow">Who We Are</span>
+            <h2 id="about-title">A company delivering <em>strategic business solutions.</em></h2>
+            <p>With a diversified portfolio of services, KNC Logistics Solutions operates across multiple strategic
+              sectors, including International Freight Forwarding, Customs Clearance, Inland Transportation, Warehousing
+              &amp; Distribution, Ship Supply, Software Development, Business Consultancy, Oilfield Stores &amp;
+              Industrial Supplies, and other integrated commercial services. By bringing these capabilities under one
+              roof, we provide our clients with seamless end-to-end solutions that simplify operations and enhance
+              business performance.</p>
+            <p>As Saudi Arabia continues its remarkable transformation under Vision 2030, we are proud to contribute to
+              the Kingdom&rsquo;s economic diversification by providing world-class logistics, technology, and business
+              solutions that connect businesses with opportunities locally and globally.</p>
+
+            <ul class="feature-list">
+              <li class="feature-item"><span class="check-icon"><svg width="11" height="11" viewBox="0 0 16 16"
+                    fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true">
+                    <path d="M3.5 8.5l3 3 6-7" />
+                  </svg></span>International Freight Forwarding</li>
+              <li class="feature-item"><span class="check-icon"><svg width="11" height="11" viewBox="0 0 16 16"
+                    fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true">
+                    <path d="M3.5 8.5l3 3 6-7" />
+                  </svg></span>Customs Clearance</li>
+              <li class="feature-item"><span class="check-icon"><svg width="11" height="11" viewBox="0 0 16 16"
+                    fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true">
+                    <path d="M3.5 8.5l3 3 6-7" />
+                  </svg></span>Inland Transportation</li>
+              <li class="feature-item"><span class="check-icon"><svg width="11" height="11" viewBox="0 0 16 16"
+                    fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true">
+                    <path d="M3.5 8.5l3 3 6-7" />
+                  </svg></span>Warehousing &amp; Distribution</li>
+              <li class="feature-item"><span class="check-icon"><svg width="11" height="11" viewBox="0 0 16 16"
+                    fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true">
+                    <path d="M3.5 8.5l3 3 6-7" />
+                  </svg></span>Ship Supply</li>
+              <li class="feature-item"><span class="check-icon"><svg width="11" height="11" viewBox="0 0 16 16"
+                    fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true">
+                    <path d="M3.5 8.5l3 3 6-7" />
+                  </svg></span>Software Development</li>
+              <li class="feature-item"><span class="check-icon"><svg width="11" height="11" viewBox="0 0 16 16"
+                    fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true">
+                    <path d="M3.5 8.5l3 3 6-7" />
+                  </svg></span>Business Consultancy</li>
+              <li class="feature-item"><span class="check-icon"><svg width="11" height="11" viewBox="0 0 16 16"
+                    fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true">
+                    <path d="M3.5 8.5l3 3 6-7" />
+                  </svg></span>Oilfield Stores &amp; Industrial Supplies</li>
+            </ul>
+          </div>
+
+          <div class="split-visual reveal-right">
+            <div class="img-frame portrait">
+              <img src="images/knc_vision.jpg"
+                alt="Business professionals reviewing documents together during a team meeting" width="900"
+                height="1350" loading="lazy">
+            </div>
+            <div class="float-badge">
+              <div class="float-badge-label">Saudi Vision 2030</div>
+              <div class="float-badge-text">Contributing to the Kingdom&rsquo;s economic diversification.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VISION & MISSION -->
+    <section id="vision" class="alt" aria-labelledby="vision-title">
+      <div class="wrap">
+        <div class="section-head centered">
+          <span class="eyebrow">Vision &amp; Mission</span>
+          <h2 id="vision-title">Our direction and <em>purpose</em></h2>
+        </div>
+
+        <div class="vm-grid">
+          <article class="vm-card dark reveal">
+            <span class="eyebrow">Vision</span>
+            <h3>Where we are going</h3>
+            <p>To become a globally recognized diversified holding group, delivering integrated and innovative solutions
+              across logistics, healthcare, industrial services, trade, and business advisory &mdash; creating lasting
+              value for stakeholders and contributing to sustainable economic progress across the markets we serve.</p>
+          </article>
+
+          <article class="vm-card light reveal">
+            <span class="eyebrow">Mission</span>
+            <h3>How we get there</h3>
+            <p>To deliver integrated, innovative, and value-driven solutions across our diverse portfolio of businesses
+              by fostering excellence, embracing technology, developing exceptional talent, and building strategic
+              partnerships &mdash; empowering our clients and creating sustainable value for our stakeholders.</p>
+          </article>
+
+          <div class="vm-image reveal">
+            <img src="images/knc_who_we_are.jpg"
+              alt="Colleagues joining hands over a meeting table, representing collaboration"
+              width="1200" height="801" loading="lazy">
+            <div class="vm-image-overlay">
+              <p>Seamless end-to-end solutions that simplify operations and enhance business performance.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" aria-labelledby="services-title">
+      <div class="wrap">
+        <div class="section-head centered">
+          <span class="eyebrow">Our Services</span>
+          <h2 id="services-title">What <em>we offer</em></h2>
+        </div>
+
+        <div class="svc-grid">
+          <article class="svc-card reveal">
+            <span class="svc-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 18l1.6-5.4h12.8L20 18a8 8 0 0 1-16 0Z" />
+                <path d="M7 12.6V8h5l3.4 4.6M12 8V4.8" />
+              </svg>
+            </span>
+            <h3>Freight Forwarding</h3>
+          </article>
+
+          <article class="svc-card reveal">
+            <span class="svc-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8Z" />
+                <path d="M14 3v5h5M9.4 14.4l1.8 1.8 3.4-3.6" />
+              </svg>
+            </span>
+            <h3>Customs Clearance</h3>
+          </article>
+
+          <article class="svc-card reveal">
+            <span class="svc-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M2 7h11v9H2zM13 10h4l3 3v3h-7z" />
+                <circle cx="6.5" cy="18" r="1.9" />
+                <circle cx="16.8" cy="18" r="1.9" />
+              </svg>
+            </span>
+            <h3>In Land &amp; Cross Border Transport</h3>
+          </article>
+
+          <article class="svc-card reveal">
+            <span class="svc-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 21h16M6.5 21v-6.5h5V21M13.5 21v-9.5h5V21" />
+                <path d="M9 11.5V4h9M18 4v4" />
+              </svg>
+            </span>
+            <h3>Project Logistics</h3>
+          </article>
+
+          <article class="svc-card reveal">
+            <span class="svc-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="5" width="18" height="16" rx="2" />
+                <path d="M8 3v4M16 3v4M3 11h18M8.5 15.5h3" />
+              </svg>
+            </span>
+            <h3>Event Logistics</h3>
+          </article>
+
+          <article class="svc-card reveal">
+            <span class="svc-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="8.5" cy="8.5" r="4.5" />
+                <path d="M11.8 11.8L20 20M17.2 17.2l1.9-1.9" />
+              </svg>
+            </span>
+            <h3>Rental Services</h3>
+          </article>
+
+          <article class="svc-card reveal">
+            <span class="svc-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="2.6" />
+                <circle cx="5" cy="5.6" r="2" />
+                <circle cx="19" cy="5.6" r="2" />
+                <circle cx="5" cy="18.4" r="2" />
+                <circle cx="19" cy="18.4" r="2" />
+                <path d="M6.5 7l3.4 3.2M17.5 7l-3.4 3.2M6.5 17l3.4-3.2M17.5 17l-3.4-3.2" />
+              </svg>
+            </span>
+            <h3>4PL Services</h3>
+          </article>
+
+          <article class="svc-card reveal">
+            <span class="svc-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 3l7.5 3v6c0 4.4-3.1 7.9-7.5 9-4.4-1.1-7.5-4.6-7.5-9V6Z" />
+                <path d="M8.8 12.2l2.2 2.2 4.2-4.4" />
+              </svg>
+            </span>
+            <h3>SABER Services</h3>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROFESSIONAL TEAM -->
+    <section id="team" class="alt" aria-labelledby="team-title">
+      <div class="wrap">
+        <div class="split-grid reverse">
+          <div class="split-copy reveal-right">
+            <span class="eyebrow">Professional Team</span>
+            <h2 id="team-title">Experienced <em>professionals</em></h2>
+            <p>At KNC Logistics Service, our strength lies in our people. We are proud to have a diverse and highly
+              skilled team of professionals who bring together deep industry knowledge, technical expertise, and a shared
+              commitment to excellence. Our team is the driving force behind our success and the foundation of the
+              trusted relationships we build with our clients.</p>
+
+            <ul class="cap-list">
+              <li><span class="check-icon"><svg width="11" height="11" viewBox="0 0 16 16" fill="none"
+                    stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true">
+                    <path d="M3.5 8.5l3 3 6-7" />
+                  </svg></span>Experienced Logistics Professionals</li>
+              <li><span class="check-icon"><svg width="11" height="11" viewBox="0 0 16 16" fill="none"
+                    stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true">
+                    <path d="M3.5 8.5l3 3 6-7" />
+                  </svg></span>End-to-End Supply Chain Expertise</li>
+              <li><span class="check-icon"><svg width="11" height="11" viewBox="0 0 16 16" fill="none"
+                    stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true">
+                    <path d="M3.5 8.5l3 3 6-7" />
+                  </svg></span>Project Logistics Capability</li>
+              <li><span class="check-icon"><svg width="11" height="11" viewBox="0 0 16 16" fill="none"
+                    stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true">
+                    <path d="M3.5 8.5l3 3 6-7" />
+                  </svg></span>Freight Forwarding Expertise</li>
+              <li><span class="check-icon"><svg width="11" height="11" viewBox="0 0 16 16" fill="none"
+                    stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true">
+                    <path d="M3.5 8.5l3 3 6-7" />
+                  </svg></span>Technology-Driven Operations</li>
+              <li><span class="check-icon"><svg width="11" height="11" viewBox="0 0 16 16" fill="none"
+                    stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true">
+                    <path d="M3.5 8.5l3 3 6-7" />
+                  </svg></span>Strong Vendor &amp; Subcontractor Network</li>
+            </ul>
+          </div>
+
+          <div class="split-visual reveal-left">
+            <div class="img-frame portrait">
+              <img src="images/knc_team.jpg"
+                alt="Team of business professionals standing together in an office" width="1100"
+                height="1650" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY KNC -->
+    <section id="why" aria-labelledby="why-title">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Why KNC</span>
+          <h2 id="why-title">Building <em>long-term relationships</em></h2>
+        </div>
+
+        <div class="why-grid">
+          <div class="why-statement reveal-left">
+            <blockquote>We establish strong and lasting relationships with clients and partners through transparency and
+              professionalism.</blockquote>
+            <ul class="why-list">
+              <li><span class="check-icon"><svg width="11" height="11" viewBox="0 0 16 16" fill="none"
+                    stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true">
+                    <path d="M3.5 8.5l3 3 6-7" />
+                  </svg></span>One Partner. Complete Logistics.</li>
+              <li><span class="check-icon"><svg width="11" height="11" viewBox="0 0 16 16" fill="none"
+                    stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true">
+                    <path d="M3.5 8.5l3 3 6-7" />
+                  </svg></span>We Own the Execution</li>
+              <li><span class="check-icon"><svg width="11" height="11" viewBox="0 0 16 16" fill="none"
+                    stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true">
+                    <path d="M3.5 8.5l3 3 6-7" />
+                  </svg></span>Right Resources, Right Time</li>
+              <li><span class="check-icon"><svg width="11" height="11" viewBox="0 0 16 16" fill="none"
+                    stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true">
+                    <path d="M3.5 8.5l3 3 6-7" />
+                  </svg></span>Local Knowledge. Global Standards.</li>
+              <li><span class="check-icon"><svg width="11" height="11" viewBox="0 0 16 16" fill="none"
+                    stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true">
+                    <path d="M3.5 8.5l3 3 6-7" />
+                  </svg></span>Visibility at Every Stage</li>
+              <li><span class="check-icon"><svg width="11" height="11" viewBox="0 0 16 16" fill="none"
+                    stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true">
+                    <path d="M3.5 8.5l3 3 6-7" />
+                  </svg></span>Safety Is Non-Negotiable.</li>
+            </ul>
+          </div>
+
+          <div class="why-visuals reveal-right">
+            <div class="img-frame">
+              <img src="images/knc_consultation.jpg"
+                alt="Two people in a consultation meeting in a private office" width="1200" height="800"
+                loading="lazy">
+            </div>
+            <div class="img-frame">
+              <img src="images/knc_handshake.jpg"
+                alt="Handshake across a desk over printed documents at a business meeting" width="1200"
+                height="800" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DECORATIVE CITYSCAPE BAND (image supplied in the KNC profile; city not identified) -->
+    <div class="skyline-band">
+      <img src="images/knc_skyline.jpg" alt="" aria-hidden="true" width="1800" height="684" loading="lazy">
+      <div class="skyline-caption">
+        <div class="wrap">
+          <span class="eyebrow">Locally and Globally</span>
+          <p>Connecting businesses with opportunities locally and globally.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTACT -->
+    <section class="contact-section" id="contact" aria-labelledby="contact-title">
+      <div class="wrap">
+        <div class="contact-inner">
+          <div class="reveal-left">
+            <span class="eyebrow">Contact Us</span>
+            <h2 class="contact-left-h" id="contact-title">Let&rsquo;s build<br><em
+                style="font-style:italic;color:var(--knc)">success together.</em></h2>
+            <div class="contact-cards">
+              <a href="tel:+966502746895" class="contact-card">
+                <span class="contact-card-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path
+                      d="M6.5 3h3l1.5 4-2 1.4a12 12 0 0 0 6.6 6.6L17 13l4 1.5v3a2 2 0 0 1-2.2 2A17 17 0 0 1 3 5.2 2 2 0 0 1 5 3Z" />
+                  </svg>
+                </span>
+                <span>
+                  <span class="contact-card-label">Phone</span>
+                  <span class="contact-card-value">0502746895</span>
+                </span>
+              </a>
+              <a href="mailto:info@masteryandprecise.com" class="contact-card">
+                <span class="contact-card-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="3" y="5" width="18" height="14" rx="2" />
+                    <path d="M3.5 6.5l8.5 6 8.5-6" />
+                  </svg>
+                </span>
+                <span>
+                  <span class="contact-card-label">Email</span>
+                  <span class="contact-card-value">info@masteryandprecise.com</span>
+                </span>
+              </a>
+              <a href="https://www.masteryandprecise.com" target="_blank" rel="noopener" class="contact-card">
+                <span class="contact-card-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M3 12h18M12 3a15 15 0 0 1 0 18A15 15 0 0 1 12 3Z" />
+                  </svg>
+                </span>
+                <span>
+                  <span class="contact-card-label">Website</span>
+                  <span class="contact-card-value">www.masteryandprecise.com</span>
+                </span>
+              </a>
+            </div>
+            <p class="contact-location">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z" />
+                <circle cx="12" cy="10" r="2.6" />
+              </svg>
+              Riyadh &mdash; Saudi Arabia
+            </p>
+          </div>
+
+          <div class="contact-cta-block reveal-right">
+            <img src="images/knc_mark.png" alt="" aria-hidden="true" class="cta-mark" width="260" height="271">
+            <h3>One Partner. Complete Logistics.</h3>
+            <p>Talk to our team about freight forwarding, customs clearance, cross-border transport and project
+              logistics.</p>
+            <a href="mailto:info@masteryandprecise.com" class="btn btn-primary" style="display:inline-flex">
+              Start the Conversation
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div
+            style="margin-bottom: 1.5rem; display: flex; flex-direction: column; align-items: flex-start; gap: 0.5rem;">
+            <img src="images/logo.png-removebg-preview.png" alt="Mastery &amp; Precise Business House logo" width="537"
+              height="318" style="height: 80px; width: auto; object-fit: contain;">
+            <div style="display: flex; flex-direction: column; align-items: flex-start; line-height: 1.2;">
+              <span
+                style="font-family: 'Fraunces', serif; font-weight: 700; font-size: 1.6rem; color: #fff; letter-spacing: 0.03em; white-space: nowrap;">MASTERY
+                &amp; PRECISE</span>
+              <span style="display: flex; align-items: center; gap: 0.5rem; white-space: nowrap; margin-top: 3px;">
+                <span
+                  style="height: 1px; width: 24px; background: linear-gradient(90deg, transparent, #c9870a);"></span>
+                <span
+                  style="font-family: 'Space Grotesk', sans-serif; font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: #c9870a; font-weight: 600;">Business
+                  House Private Limited</span>
+                <span
+                  style="height: 1px; width: 24px; background: linear-gradient(90deg, #c9870a, transparent);"></span>
+              </span>
+              <span
+                style="font-family: 'Space Grotesk', sans-serif; font-size: 0.5rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.45); white-space: nowrap; margin-top: 4px;">Mastery
+                in Vision. Precise in Action.</span>
+            </div>
+          </div>
+          <p>KNC Logistics Services delivers integrated logistics, freight forwarding and customs solutions from Riyadh,
+            Kingdom of Saudi Arabia.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="index.html">Main Site</a></li>
+            <li><a href="#about">About KNC</a></li>
+            <li><a href="#vision">Vision &amp; Mission</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#team">Professional Team</a></li>
+            <li><a href="#why">Why KNC</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>KNC Logistics Services</h4>
+          <ul>
+            <li><span>Riyadh &mdash; Saudi Arabia</span></li>
+            <li><a href="tel:+966502746895">0502746895</a></li>
+            <li><a href="mailto:info@masteryandprecise.com">info@masteryandprecise.com</a></li>
+            <li><a href="https://www.masteryandprecise.com" target="_blank"
+                rel="noopener">www.masteryandprecise.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-tagline">One Partner. Complete Logistics.</p>
+        <p>&copy; <span id="year"></span> Mastery &amp; Precise Business House Private Limited. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Sticky header
+    const header = document.getElementById('site-header');
+    window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 60));
+
+    // Mobile menu
+    const toggle = document.getElementById('menuToggle');
+    const navlinks = document.getElementById('navlinks');
+    toggle.addEventListener('click', () => {
+      const open = navlinks.classList.toggle('open');
+      toggle.classList.toggle('active', open);
+      toggle.setAttribute('aria-expanded', open);
+    });
+    navlinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      navlinks.classList.remove('open');
+      toggle.classList.remove('active');
+      toggle.setAttribute('aria-expanded', 'false');
+    }));
+
+    // Scroll reveal
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => io.observe(el));
+
+    // Staggered reveal for the fact and service cards
+    const staggered = document.querySelectorAll('.fact-card, .svc-card');
+    const stagIO = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('in'), i * 90);
+          stagIO.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    staggered.forEach(el => stagIO.observe(el));
+
+    // Particle canvas — KNC orange tones
+    (function () {
+      const canvas = document.getElementById('bg-canvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      let W, H, particles;
+      function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
+      window.addEventListener('resize', () => { resize(); init(); });
+      resize();
+      function init() {
+        particles = Array.from({ length: 45 }, () => ({
+          x: Math.random() * W, y: Math.random() * H,
+          vx: (Math.random() - .5) * .25, vy: (Math.random() - .5) * .25,
+          r: Math.random() * 1.8 + .5, alpha: Math.random() * .25 + .06
+        }));
+      }
+      init();
+      function draw() {
+        ctx.clearRect(0, 0, W, H);
+        for (let i = 0; i < particles.length; i++) {
+          for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x, dy = particles[i].y - particles[j].y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < 130) {
+              ctx.beginPath(); ctx.moveTo(particles[i].x, particles[i].y); ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.strokeStyle = `rgba(225,107,35,${(1 - dist / 130) * .1})`; ctx.lineWidth = 0.6; ctx.stroke();
+            }
+          }
+        }
+        particles.forEach(p => {
+          ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(225,107,35,${p.alpha})`; ctx.fill();
+          p.x += p.vx; p.y += p.vy;
+          if (p.x < 0) p.x = W; if (p.x > W) p.x = 0;
+          if (p.y < 0) p.y = H; if (p.y > H) p.y = 0;
+        });
+        requestAnimationFrame(draw);
+      }
+      if (!window.matchMedia('(prefers-reduced-motion:reduce)').matches) draw();
+    })();
+
+    // Preloader
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const preloader = document.getElementById('preloader');
+        if (preloader) preloader.classList.add('hide');
+      }, 700);
+    });
+  </script>
+</body>
+
+</html>
