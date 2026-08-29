@@ -127,6 +127,37 @@
       display: inline-block
     }
 
+    /* ======================== KNC BRAND HEADLINE ======================== */
+    .knc-brand-headline {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+      margin: 0.6rem 0 0.4rem;
+    }
+
+    .knc-brand-name {
+      font-family: "Fraunces", serif;
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      background: linear-gradient(120deg, var(--knc-deep) 0%, var(--knc) 45%, var(--knc-lt) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+    }
+
+    .knc-brand-sub {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(0.9rem, 2.2vw, 1.4rem);
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--knc-blue);
+      padding-left: 0.12em;
+      margin-top: 0.15rem;
+    }
+
     .wrap {
       max-width: 1200px;
       margin: 0 auto;
@@ -1574,7 +1605,11 @@
       <div class="wrap">
         <div class="knc-hero-grid">
           <div>
-            <span class="eyebrow">KNC Logistics Services &middot; Riyadh, Saudi Arabia</span>
+            <span class="eyebrow">Riyadh, Saudi Arabia &middot; Est. 2026</span>
+            <div class="knc-brand-headline">
+              <span class="knc-brand-name">KNC Logistics</span>
+              <span class="knc-brand-sub">Solutions</span>
+            </div>
             <h1 id="knc-hero-title">One partner.<br><em>Complete logistics.</em></h1>
             <p class="lede"><mark>KNC Logistics Solutions</mark> is a Foreign Investment Company (LLC), established in
               2026 and headquartered in Riyadh, Kingdom of Saudi Arabia. Since our inception, we have been committed to
@@ -1770,22 +1805,8 @@
                     fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"
                     aria-hidden="true">
                     <path d="M3.5 8.5l3 3 6-7" />
-                  </svg></span>Ship Supply</li>
-              <li class="feature-item"><span class="check-icon"><svg width="11" height="11" viewBox="0 0 16 16"
-                    fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"
-                    aria-hidden="true">
-                    <path d="M3.5 8.5l3 3 6-7" />
-                  </svg></span>Software Development</li>
-              <li class="feature-item"><span class="check-icon"><svg width="11" height="11" viewBox="0 0 16 16"
-                    fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"
-                    aria-hidden="true">
-                    <path d="M3.5 8.5l3 3 6-7" />
-                  </svg></span>Business Consultancy</li>
-              <li class="feature-item"><span class="check-icon"><svg width="11" height="11" viewBox="0 0 16 16"
-                    fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"
-                    aria-hidden="true">
-                    <path d="M3.5 8.5l3 3 6-7" />
-                  </svg></span>Oilfield Stores &amp; Industrial Supplies</li>
+                  </svg></span>Cross Border Transportation</li>
+
             </ul>
           </div>
 

@@ -1,0 +1,838 @@
+    }
+
+    /* ======================== PRELOADER ======================== */
+    #preloader {
+      position: fixed;
+      inset: 0;
+      background: #faf7f2;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
+    }
+
+    #preloader.hide {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .loader-logo {
+      width: 140px;
+      animation: pulse-loader 1.2s infinite alternate ease-in-out;
+    }
+
+    @keyframes pulse-loader {
+      0% {
+        transform: scale(0.92);
+        opacity: 0.8;
+      }
+
+      100% {
+        transform: scale(1.08);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- PRELOADER -->
+  <div id="preloader">
+    <img src="images/logo.png-removebg-preview.png" alt="M&amp;P Logo" class="loader-logo">
+  </div>
+
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- HEADER -->
+  <header id="site-header">
+    <nav class="wrap">
+      <a href="#top" class="logo"
+        style="padding: 0.2rem 0; flex-direction: row; align-items: center; gap: 0.7rem; text-decoration: none;">
+        <img src="images/logo.png-removebg-preview.png" alt="M&amp;P Logo">
+        <span class="logo-text-block"
+          style="display: flex; flex-direction: column; align-items: flex-start; line-height: 1.15;">
+          <span class="logo-main-name"
+            style="font-family: 'Fraunces', serif; font-weight: 700; font-size: 1.15rem; color: var(--navy); letter-spacing: 0.04em; white-space: nowrap; transition: font-size var(--tr);">MASTERY
+            &amp; PRECISE</span>
+          <span class="logo-sub"
+            style="display: flex; align-items: center; gap: 0.35rem; white-space: nowrap; transition: opacity var(--tr);">
+            <span style="height: 1px; width: 18px; background: linear-gradient(90deg, transparent, #c9870a);"></span>
+            <span
+              style="font-family: 'Space Grotesk', sans-serif; font-size: 0.48rem; letter-spacing: 0.18em; text-transform: uppercase; color: #c9870a; font-weight: 600;">Business
+              House Private Limited</span>
+            <span style="height: 1px; width: 18px; background: linear-gradient(90deg, #c9870a, transparent);"></span>
+          </span>
+          <span class="logo-tagline"
+            style="font-family: 'Space Grotesk', sans-serif; font-size: 0.4rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--navy); opacity: 0.6; white-space: nowrap; transition: opacity var(--tr);">Mastery
+            in Vision. Precise in Action.</span>
+        </span>
+      </a>
+      <button class="navmenu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="navlinks" id="navlinks">
+        <a href="#who">Who We Are</a>
+        <a href="#vision">Vision &amp; Mission</a>
+        <a href="#services">Services</a>
+        <a href="#why">Why Us</a>
+        <a href="knc-logistics.html">KNC Logistics</a>
+        <a href="#contact" class="nav-cta">Contact Us</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="hero-bg">
+      <img src="images/hero_light.png" alt="" class="hero-bg-img" aria-hidden="true">
+    </div>
+    <div class="hero-content wrap">
+      <div class="hero-grid">
+        <div>
+          <h1>Connecting <em>purpose</em><br>with progress.</h1>
+          <p class="lede"><mark>Mastery &amp; Precise Business House</mark> is a multidisciplinary consulting
+            organization helping
+            businesses achieve sustainable growth through strategic advisory, operational excellence, digital
+            transformation, and professional development.</p>
+          <div class="cta-row">
+            <a href="#contact" class="btn btn-primary">
+              Start a Conversation
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+            <a href="#services" class="btn btn-ghost">Explore Services</a>
+          </div>
+          <div class="hero-stats">
+            <div>
+              <div class="hero-stat-num"><span class="counter-val" data-target="5">0</span>+</div>
+              <div class="hero-stat-label">Industry Sectors</div>
+            </div>
+            <div>
+              <div class="hero-stat-num"><span class="counter-val" data-target="360">0</span>&deg;</div>
+              <div class="hero-stat-label">Business Solutions</div>
+            </div>
+            <div>
+              <div class="hero-stat-num">&infin;</div>
+              <div class="hero-stat-label">Growth Potential</div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-img-frame">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1000"
+              alt="Clean and professional corporate building" loading="eager">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-hint" aria-hidden="true">
+      <div class="scroll-arrow"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-section">
+    <div class="marquee-track">
+      <div class="marquee-item">
+        <div class="marquee-dot"></div>Business Consultancy
+      </div>
+      <div class="marquee-item">
+        <div class="marquee-dot"></div>Supply Chain
+      </div>
+      <div class="marquee-item">
+        <div class="marquee-dot"></div>Corporate Governance
+      </div>
+      <div class="marquee-item">
+        <div class="marquee-dot"></div>Healthcare Advisory
+      </div>
+      <div class="marquee-item">
+        <div class="marquee-dot"></div>EdTech Services
+      </div>
+      <div class="marquee-item">
+        <div class="marquee-dot"></div>Industrial Services
+      </div>
+      <div class="marquee-item">
+        <div class="marquee-dot"></div>Trade Solutions
+      </div>
+      <div class="marquee-item">
+        <div class="marquee-dot"></div>Strategic Growth
+      </div>
+      <div class="marquee-item">
+        <div class="marquee-dot"></div>Business Consultancy
+      </div>
+      <div class="marquee-item">
+        <div class="marquee-dot"></div>Supply Chain
+      </div>
+      <div class="marquee-item">
+        <div class="marquee-dot"></div>Corporate Governance
+      </div>
+      <div class="marquee-item">
+        <div class="marquee-dot"></div>Healthcare Advisory
+      </div>
+      <div class="marquee-item">
+        <div class="marquee-dot"></div>EdTech Services
+      </div>
+      <div class="marquee-item">
+        <div class="marquee-dot"></div>Industrial Services
+      </div>
+      <div class="marquee-item">
+        <div class="marquee-dot"></div>Trade Solutions
+      </div>
+      <div class="marquee-item">
+        <div class="marquee-dot"></div>Strategic Growth
+      </div>
+    </div>
+  </div>
+
+  <!-- WHO WE ARE -->
+  <section id="who">
+    <div class="wrap">
+      <div class="who-grid">
+        <div class="reveal-left">
+          <div class="who-img-wrap">
+            <img src="images/about_team.png" alt="The M&amp;P team collaborating on strategic initiatives"
+              loading="lazy">
+            <div class="who-img-badge">
+              <strong>2024</strong>
+              <span>Est. &middot; India</span>
+            </div>
+          </div>
+        </div>
+        <div class="who-text reveal-right">
+          <span class="eyebrow">Who We Are</span>
+          <h2 style="font-size:clamp(2rem,3.2vw,2.7rem);margin:1rem 0 1.5rem;color:var(--navy)">A partner across every
+            stage of growth.</h2>
+          <p>Our experienced consultants combine deep industry expertise with innovative thinking to deliver measurable
+            business outcomes across multiple sectors &mdash; from logistics and healthcare to industrial services,
+            trade, and business advisory.</p>
+          <p>At <mark>Mastery &amp; Precise</mark>, our strength lies in our people: a diverse team of professionals,
+            industry
+            experts, consultants, and strategic advisors who work collaboratively with clients to understand their
+            challenges, identify opportunities, and implement practical strategies for sustainable growth.</p>
+          <blockquote class="big-quote">&ldquo;Our people are our greatest asset. Through expertise, integrity, and
+            collaboration, we help organizations transform challenges into opportunities.&rdquo;</blockquote>
+        </div>
+      </div>
+
+      <!-- LEADERSHIP TEAM -->
+      <div class="leadership-area">
+        <div class="section-head centered reveal">
+          <span class="eyebrow">Our People</span>
+          <h2>Leadership Team</h2>
+          <p>Seasoned professionals driving strategic growth across logistics, supply chain, and business operations.
+          </p>
+        </div>
+
+        <div class="leadership-grid">
+          <!-- Dr. Afzal Aziz -->
+          <div class="leader-card reveal">
+            <div class="leader-photo-wrap">
+              <img class="leader-photo" src="images/team_afzal.png"
+                alt="Dr. Afzal Aziz - Global Logistics & Freight Forwarding Executive" loading="lazy">
+            </div>
+            <div class="leader-info">
+              <h3 class="leader-name">Dr. Afzal Aziz</h3>
+              <div class="leader-meta"></div>
+              <div class="leader-role">Global Logistics &amp; Freight Forwarding Executive</div>
+              <div class="leader-highlights">
+                <span class="tag">23+ Yrs Experience</span>
+                <span class="tag">Doctorate</span>
+                <span class="tag">MBA (UK)</span>
+              </div>
+              <ul class="leader-details">
+                <li><strong>Education &mdash;</strong> Doctorate in Strategic Supply Chain Leadership (Dunster Business
+                  School, Switzerland); Integrated Doctorate in Management (UCAM, Spain); MBA (Plymouth University, UK);
+                  B.Com (University of Calicut, India)</li>
+                <li><strong>Strengths &mdash;</strong> Strategic leadership, commercial acumen, data-driven
+                  decision-making, stakeholder management, high performance team building</li>
+              </ul>
+              <div class="leader-expand">
+                <ul class="leader-details">
+                  <li><strong>Skills &mdash;</strong> B2B &amp; B2C business strategy, pricing and P&amp;L ownership,
+                    negotiation, project management, operations optimization, KPI design, change management, customer
+                    relationship management</li>
+                  <li><strong>Languages &mdash;</strong> English, Arabic, Hindi, Malayalam, and Tamil</li>
+                </ul>
+                <div class="leader-prev-companies">
+                  <strong>Previous Companies</strong>
+                  MSC, TNT Express, Rajab Logistics, FedEx, Starlinks &amp; Naqel Express
+                </div>
+              </div>
+              <button class="leader-toggle" onclick="this.closest('.leader-card').classList.toggle('expanded')">
+                <span class="toggle-text">View Full Profile</span>
+                <span class="toggle-icon">&#9660;</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Arun Nelli -->
+          <div class="leader-card reveal">
+            <div class="leader-photo-wrap">
+              <img class="leader-photo" src="images/team_arun.png"
+                alt="Arun Nelli - Supply Chain & Inventory Management Specialist" loading="lazy">
+            </div>
+            <div class="leader-info">
+              <h3 class="leader-name">Arun Nelli</h3>
+              <div class="leader-meta"></div>
+              <div class="leader-role">Supply Chain &amp; Inventory Management Specialist</div>
+              <div class="leader-highlights">
+                <span class="tag">15+ Yrs Experience</span>
+                <span class="tag">B.Com</span>
+                <span class="tag">Warehouse Ops</span>
+              </div>
+              <ul class="leader-details">
+                <li><strong>Education &mdash;</strong> Bachelors in Commerce, Shobhit University, India</li>
+                <li><strong>Strengths &mdash;</strong> Hands-on operational leadership, process design and optimization,
+                  analytical inventory control, adaptability, and people management in warehouse and fleet environments
+                </li>
+              </ul>
+              <div class="leader-expand">
+                <ul class="leader-details">
+                  <li><strong>Skills &mdash;</strong> Inventory management, warehousing, retail logistics, transport and
+                    fleet coordination, supply merchandising, reporting and KPI dashboards, problem solving in supply
+                    chain, MS Office and related tools</li>
+                  <li><strong>Languages &mdash;</strong> English, Arabic, Hindi, Malayalam, Tamil &amp; Kannada</li>
+                </ul>
+                <div class="leader-prev-companies">
+                  <strong>Previous Companies</strong>
+                  Majid Al Futtaim, Al Mutlaq Co., Grace Engineering, SIEMENS, Dias &amp; Associates
+                </div>
+              </div>
+              <button class="leader-toggle" onclick="this.closest('.leader-card').classList.toggle('expanded')">
+                <span class="toggle-text">View Full Profile</span>
+                <span class="toggle-icon">&#9660;</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Nisar Kondadan -->
+          <div class="leader-card reveal">
+            <div class="leader-photo-wrap">
+              <img class="leader-photo" src="images/team_nisar.png"
+                alt="Nisar Kondadan - Operations, Sales & Marketing Leader" loading="lazy">
+            </div>
+            <div class="leader-info">
+              <h3 class="leader-name">Nisar Kondadan</h3>
+              <div class="leader-meta"></div>
+              <div class="leader-role">Operations / Sales &amp; Marketing Leader</div>
+              <div class="leader-highlights">
+                <span class="tag">12+ Yrs Experience</span>
+                <span class="tag">M.Sc. Psychology</span>
+                <span class="tag">M. Ed. &amp; B.Ed.</span>
+              </div>
+              <ul class="leader-details">
+                <li><strong>Education &mdash;</strong> M.Sc. Psychology (Annamalai University, Chidambaram); M.A.
+                  Economics (Annamalai University); M.Ed. &amp; B.Ed. Social Science (MG / Calicut University); B.A.
+                  Economics (Calicut University)</li>
+                <li><strong>Strengths &mdash;</strong> End-to-end Marketing Strategy, Operational Efficiency, and
+                  Collaborative Partnerships</li>
+              </ul>
+              <div class="leader-expand">
+                <ul class="leader-details">
+                  <li><strong>Skills &mdash;</strong> Project sales and marketing, digital campaigns, tender and bid
+                    management, client onboarding, logistics coordination, stakeholder communication, team training and
+                    mentoring</li>
+                  <li><strong>Languages &mdash;</strong> English, Arabic, Hindi and Malayalam</li>
+                </ul>
+                <div class="leader-prev-companies">
+                  <strong>Previous Companies</strong>
+                  Al Mutlaq Co., Saudi GINTL, Arabian Innovation, Setilas OU &amp; Globe Link West Star Shipping Co.
+                </div>
+              </div>
+              <button class="leader-toggle" onclick="this.closest('.leader-card').classList.toggle('expanded')">
+                <span class="toggle-text">View Full Profile</span>
+                <span class="toggle-icon">&#9660;</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- VISION & MISSION — IMMERSIVE FULL-WIDTH -->
+  <section class="vm-section" id="vision">
+    <div class="section-head centered reveal" style="padding:5rem 5vw 0">
+      <span class="eyebrow">Company Vision &amp; Mission</span>
+      <h2>Building lasting value, deliberately.</h2>
+      <p>We exist to create meaningful, measurable impact for every stakeholder we serve &mdash; from clients to
+        communities.</p>
+    </div>
+
+    <!-- VISION CARD -->
+    <div class="vm-card-full reveal-left">
+      <div class="vm-card-bg">
+        <img src="images/vision.png" alt="Global vision — city skyline at golden hour" loading="lazy">
+      </div>
+      <div class="vm-card-overlay"></div>
+      <div class="vm-card-content">
+        <span class="eyebrow">Our Vision</span>
+        <h3>A globally recognized group.</h3>
+        <p>To become a globally recognized diversified holding group, delivering integrated and innovative solutions
+          across logistics, healthcare, industrial services, trade, and business advisory &mdash; creating lasting value
+          for stakeholders and contributing to sustainable economic progress across the markets we serve.</p>
+        <div class="vm-stat-row">
+          <div class="vm-stat">
+            <div class="vm-stat-num"><span class="counter-val" data-target="5">0</span>+</div>
+            <div class="vm-stat-label">Sectors</div>
+          </div>
+          <div class="vm-stat">
+            <div class="vm-stat-num">Global</div>
+            <div class="vm-stat-label">Ambition</div>
+          </div>
+          <div class="vm-stat">
+            <div class="vm-stat-num">&infin;</div>
+            <div class="vm-stat-label">Impact</div>
+          </div>
+        </div>
+      </div>
+      <div class="vm-card-decorline"></div>
+    </div>
+
+    <!-- MISSION CARD -->
+    <div class="vm-card-full reveal-right">
+      <div class="vm-card-bg">
+        <img src="images/mission.png" alt="Mission — collaborative workspace from above" loading="lazy">
+      </div>
+      <div class="vm-card-overlay"></div>
+      <div class="vm-card-content">
+        <span class="eyebrow">Our Mission</span>
+        <h3>Integrated, value-driven solutions.</h3>
+        <p>To deliver integrated, innovative, and value-driven solutions across our diverse portfolio of businesses by
+          fostering excellence, embracing technology, developing exceptional talent, and building strategic partnerships
+          &mdash; empowering our clients and creating sustainable value for our stakeholders.</p>
+        <div class="vm-stat-row">
+          <div class="vm-stat">
+            <div class="vm-stat-num"><span class="counter-val" data-target="360">0</span>&deg;</div>
+            <div class="vm-stat-label">Solutions</div>
+          </div>
+          <div class="vm-stat">
+            <div class="vm-stat-num"><span class="counter-val" data-target="100">0</span>%</div>
+            <div class="vm-stat-label">Commitment</div>
+          </div>
+          <div class="vm-stat">
+            <div class="vm-stat-num">24/7</div>
+            <div class="vm-stat-label">Support</div>
+          </div>
+        </div>
+      </div>
+      <div class="vm-card-decorline"></div>
+    </div>
+  </section>
+
+  <!-- CORE VALUES — 4 CARDS -->
+  <section class="values-section" id="values">
+    <div class="wrap">
+      <div class="section-head centered reveal">
+        <span class="eyebrow">Core Values</span>
+        <h2>What guides every decision we make.</h2>
+        <p>Our values are the bedrock of every relationship we build and every solution we deliver.</p>
+      </div>
+      <div class="values-grid">
+        <div class="value-card reveal">
+          <span class="value-num">01</span>
+          <div class="value-icon-wrap">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
+          </div>
+          <h3>Integrity</h3>
+          <p>We uphold the highest standards of honesty, transparency, and ethical conduct in every decision and
+            relationship we build.</p>
+        </div>
+        <div class="value-card reveal">
+          <span class="value-num">02</span>
+          <div class="value-icon-wrap">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2L2 7l10 5 10-5-10-5z" />
+              <path d="M2 17l10 5 10-5" />
+              <path d="M2 12l10 5 10-5" />
+            </svg>
+          </div>
+          <h3>Excellence</h3>
+          <p>We strive for excellence in everything we do, delivering superior quality, operational efficiency, and
+            outstanding results.</p>
+        </div>
+        <div class="value-card reveal">
+          <span class="value-num">03</span>
+          <div class="value-icon-wrap">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M8 14s1.5 2 4 2 4-2 4-2" />
+              <line x1="9" y1="9" x2="9.01" y2="9" />
+              <line x1="15" y1="9" x2="15.01" y2="9" />
+            </svg>
+          </div>
+          <h3>Innovation</h3>
+          <p>We embrace creativity, technology, and continuous improvement to develop forward-thinking solutions that
+            create lasting value.</p>
+        </div>
+        <div class="value-card reveal">
+          <span class="value-num">04</span>
+          <div class="value-icon-wrap">
+            <svg viewBox="0 0 24 24">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg>
+          </div>
+          <h3>Responsibility</h3>
+          <p>We conduct our business responsibly for the benefit of our stakeholders, communities, and the sustainable
+            future we all share.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- SERVICES -->
+  <section class="alt" id="services">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">What We Do</span>
+        <h2>Our Services</h2>
+        <p>End-to-end solutions designed for businesses at every stage of their growth journey.</p>
+      </div>
+      <div class="services-grid">
+        <!-- Wide featured card -->
+        <div class="service-card wide reveal">
+          <div class="service-img">
+            <img src="images/service_consultancy.png" alt="Business consultancy strategy session" loading="lazy">
+          </div>
+          <div class="service-body">
+            <div class="service-index">01</div>
+            <h3>Business Consultancy</h3>
+            <p>Strategic advisory that turns your vision into a workable plan for sustainable growth. We partner with
+              leadership teams to diagnose challenges, design solutions, and execute strategies that deliver lasting
+              competitive advantage across every market you operate in.</p>
+          </div>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-img">
+            <img src="images/service_logistics.png" alt="Supply chain logistics" loading="lazy">
+          </div>
+          <div class="service-body">
+            <div class="service-index">02</div>
+            <h3>Supply Chain Services</h3>
+            <p>End-to-end logistics and supply chain solutions built for reliability at global scale &mdash; optimized
+              for speed, resilience, and cost efficiency.</p>
+          </div>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-img">
+            <img src="images/service_governance.png" alt="Corporate governance" loading="lazy">
+          </div>
+          <div class="service-body">
+            <div class="service-index">03</div>
+            <h3>Corporate Governance</h3>
+            <p>Robust frameworks and oversight that keep organizations accountable, transparent, and resilient in the
+              face of evolving regulatory environments.</p>
+          </div>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-img">
+            <img src="images/service_excellence.png" alt="Business excellence" loading="lazy">
+          </div>
+          <div class="service-body">
+            <div class="service-index">04</div>
+            <h3>Business Excellence</h3>
+            <p>Operational improvement programs focused on quality, efficiency, and measurable results that transform
+              how organizations perform.</p>
+          </div>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-img">
+            <img src="images/service_edtech.png" alt="EdTech digital learning" loading="lazy">
+          </div>
+          <div class="service-body">
+            <div class="service-index">05</div>
+            <h3>EdTech Services</h3>
+            <p>Technology-driven learning and development solutions that cultivate exceptional talent and create agile,
+              future-ready organizations.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section id="why">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Why Choose Us</span>
+        <h2>A strategic business partner you can trust.</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-card reveal">
+          <div class="why-num">01</div>
+          <h3>Strategic Partnership</h3>
+          <p>We go beyond consulting by partnering with our clients to understand their vision, overcome challenges, and
+            achieve sustainable business growth at every level.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-num">02</div>
+          <h3>Industry Expertise</h3>
+          <p>Our team brings extensive practical experience across diverse industries, combining strategic insight with
+            deep operational excellence and market intelligence.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-num">03</div>
+          <h3>Innovation-Driven</h3>
+          <p>We leverage modern technologies, data-driven strategies, and global best practices to help organizations
+            stay competitive and future-ready.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact">
+    <div class="wrap">
+      <div class="contact-inner">
+        <div class="reveal-left">
+          <span class="eyebrow">Contact Us</span>
+          <h2 class="contact-left-h">Together, we can<br><em style="font-style:italic;color:var(--copper-lt)">achieve
+              more.</em></h2>
+          <p style="color:var(--muted);line-height:1.8">Ready to transform your business? Our team of experts is here to
+            help you navigate complex challenges and unlock sustainable growth opportunities.</p>
+          <div class="contact-cards">
+            <a href="tel:+919633253192" class="contact-card">
+              <div class="contact-card-icon">&#128222;</div>
+              <div>
+                <div class="contact-card-label">Phone</div>
+                <div class="contact-card-value">+91 96332 53192</div>
+              </div>
+            </a>
+            <a href="mailto:info@masteryandprecise.com" class="contact-card">
+              <div class="contact-card-icon">&#9993;</div>
+              <div>
+                <div class="contact-card-label">Email</div>
+                <div class="contact-card-value">info@masteryandprecise.com</div>
+              </div>
+            </a>
+            <a href="https://www.masteryandprecise.com" target="_blank" rel="noopener" class="contact-card">
+              <div class="contact-card-icon">&#127760;</div>
+              <div>
+                <div class="contact-card-label">Website</div>
+                <div class="contact-card-value">www.masteryandprecise.com</div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="contact-cta-block reveal-right">
+          <div style="font-size:3rem;margin-bottom:1rem">&#129309;</div>
+          <h3>Let&rsquo;s Build Something Extraordinary</h3>
+          <p>Whether you&rsquo;re looking to scale operations, enter new markets, or transform your business model
+            &mdash; we have the expertise and network to make it happen.</p>
+          <a href="mailto:info@masteryandprecise.com" class="btn btn-primary" style="display:inline-flex;margin:0 auto">
+            Start the Conversation
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div
+            style="margin-bottom: 1.5rem; display: flex; flex-direction: column; align-items: flex-start; gap: 0.5rem;">
+            <img src="images/logo.png-removebg-preview.png" alt="M&amp;P Logo"
+              style="height: 80px; width: auto; object-fit: contain;">
+            <div style="display: flex; flex-direction: column; align-items: flex-start; line-height: 1.2;">
+              <span
+                style="font-family: 'Fraunces', serif; font-weight: 700; font-size: 1.6rem; color: #fff; letter-spacing: 0.03em; white-space: nowrap;">MASTERY
+                &amp; PRECISE</span>
+              <span style="display: flex; align-items: center; gap: 0.5rem; white-space: nowrap; margin-top: 3px;">
+                <span
+                  style="height: 1px; width: 24px; background: linear-gradient(90deg, transparent, #c9870a);"></span>
+                <span
+                  style="font-family: 'Space Grotesk', sans-serif; font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: #c9870a; font-weight: 600;">Business
+                  House Private Limited</span>
+                <span
+                  style="height: 1px; width: 24px; background: linear-gradient(90deg, #c9870a, transparent);"></span>
+              </span>
+              <span
+                style="font-family: 'Space Grotesk', sans-serif; font-size: 0.5rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.45); white-space: nowrap; margin-top: 4px;">Mastery
+                in Vision. Precise in Action.</span>
+            </div>
+          </div>
+          <p>A multidisciplinary consulting organization helping businesses achieve sustainable growth through strategic
+            advisory, operational excellence, and digital transformation.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="#who">Who We Are</a></li>
+            <li><a href="#vision">Vision &amp; Mission</a></li>
+            <li><a href="#services">Our Services</a></li>
+            <li><a href="#why">Why Choose Us</a></li>
+            <li><a href="knc-logistics.html">KNC Logistics</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#services">Business Consultancy</a></li>
+            <li><a href="#services">Supply Chain</a></li>
+            <li><a href="#services">Corporate Governance</a></li>
+            <li><a href="#services">Business Excellence</a></li>
+            <li><a href="#services">EdTech Services</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-tagline">Mastery in Vision. Precise in Action.</p>
+        <p>&copy; <span id="year"></span> <mark>Mastery &amp; Precise Business House Private Limited</mark>. All rights
+          reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Sticky header
+    const header = document.getElementById('site-header');
+    window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 60));
+
+    // Mobile menu
+    const toggle = document.getElementById('menuToggle');
+    const navlinks = document.getElementById('navlinks');
+    toggle.addEventListener('click', () => {
+      const open = navlinks.classList.toggle('open');
+      toggle.classList.toggle('active', open);
+      toggle.setAttribute('aria-expanded', open);
+    });
+    navlinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      navlinks.classList.remove('open');
+      toggle.classList.remove('active');
+      toggle.setAttribute('aria-expanded', 'false');
+    }));
+
+    // Scroll reveal
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => io.observe(el));
+
+    // Staggered reveal for value cards
+    const valueCards = document.querySelectorAll('.value-card');
+    const valueIO = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('in'), i * 120);
+          valueIO.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    valueCards.forEach(el => valueIO.observe(el));
+
+    // Particle canvas - light copper tones
+    (function () {
+      const canvas = document.getElementById('bg-canvas');
+      const ctx = canvas.getContext('2d');
+      let W, H, particles;
+      function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
+      window.addEventListener('resize', () => { resize(); init(); });
+      resize();
+      function init() {
+        particles = Array.from({ length: 45 }, () => ({
+          x: Math.random() * W, y: Math.random() * H,
+          vx: (Math.random() - .5) * .25, vy: (Math.random() - .5) * .25,
+          r: Math.random() * 1.8 + .5, alpha: Math.random() * .25 + .06
+        }));
+      }
+      init();
+      function draw() {
+        ctx.clearRect(0, 0, W, H);
+        for (let i = 0; i < particles.length; i++) {
+          for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x, dy = particles[i].y - particles[j].y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < 130) {
+              ctx.beginPath(); ctx.moveTo(particles[i].x, particles[i].y); ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.strokeStyle = `rgba(181,102,58,${(1 - dist / 130) * .1})`; ctx.lineWidth = 0.6; ctx.stroke();
+            }
+          }
+        }
+        particles.forEach(p => {
+          ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(181,102,58,${p.alpha})`; ctx.fill();
+          p.x += p.vx; p.y += p.vy;
+          if (p.x < 0) p.x = W; if (p.x > W) p.x = 0;
+          if (p.y < 0) p.y = H; if (p.y > H) p.y = 0;
+        });
+        requestAnimationFrame(draw);
+      }
+      if (!window.matchMedia('(prefers-reduced-motion:reduce)').matches) draw();
+    })();
+
+    // Parallax on VM section images
+    (function () {
+      const vmCards = document.querySelectorAll('.vm-card-bg img');
+      if (!window.matchMedia('(prefers-reduced-motion:reduce)').matches) {
+        window.addEventListener('scroll', () => {
+          vmCards.forEach(img => {
+            const rect = img.parentElement.parentElement.getBoundingClientRect();
+            const speed = 0.15;
+            const yPos = -(rect.top * speed);
+            img.style.transform = `translateY(${yPos}px) scale(1.1)`;
+          });
+        }, { passive: true });
+      }
+    })();
+
+    // Preloader
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const preloader = document.getElementById('preloader');
+        if (preloader) preloader.classList.add('hide');
+      }, 700);
+    });
+
+    // Animated Counters
+    const counters = document.querySelectorAll('.counter-val');
+    const counterIO = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = +el.getAttribute('data-target');
+          const duration = 2000;
+          const step = target / (duration / 16);
+          let current = 0;
+          const updateCounter = () => {
+            current += step;
+            if (current < target) {
+              el.innerText = Math.ceil(current);
+              requestAnimationFrame(updateCounter);
+            } else {
+              el.innerText = target;
+            }
+          };
+          updateCounter();
+          observer.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
+    counters.forEach(c => counterIO.observe(c));
+
+  </script>
+</body>
+
+</html>
