@@ -510,6 +510,9 @@
 
     .loader-logo {
       width: 120px;
+      max-width: 80vw;
+      height: auto;
+      object-fit: contain;
       animation: pulse-loader 1.2s infinite alternate ease-in-out;
     }
 
@@ -624,8 +627,9 @@
     }
 
     .hero-logo-badge img {
-      width: 46px;
+      width: 52px;
       height: auto;
+      object-fit: contain;
       flex-shrink: 0
     }
 
@@ -1528,10 +1532,13 @@
       }
 
       .hero-logo-badge {
+        position: relative;
         left: 0;
-        bottom: 2%;
-        max-width: 13rem;
-        padding: .8rem .9rem
+        bottom: 0;
+        margin-top: 1.5rem;
+        max-width: 100%;
+        padding: .8rem 1rem;
+        animation: none;
       }
 
       .float-badge {
@@ -1638,7 +1645,7 @@
             </div>
 
             <div class="hero-logo-badge">
-              <img src="images/knc_mark.png" alt="" aria-hidden="true" width="260" height="271">
+              <img src="images/knc_logo.png" alt="KNC Logo" aria-hidden="true" width="520" height="506">
               <span>
                 <span class="hero-logo-badge-label">Headquarters</span>
                 <span class="hero-logo-badge-value">Riyadh, Kingdom of Saudi Arabia</span>
