@@ -251,6 +251,65 @@
       width: 100%
     }
 
+    .nav-dropdown {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    .nav-dropdown-content {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: var(--bg-card);
+      min-width: 270px;
+      box-shadow: var(--shadow-md);
+      border-radius: var(--radius);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: all var(--tr);
+      padding: 1.25rem;
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      border: 1px solid var(--line);
+    }
+    .nav-dropdown:hover .nav-dropdown-content {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .nav-dropdown-content .dropdown-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+    .nav-dropdown-content .category {
+      font-size: 0.65rem;
+      color: var(--copper-lt);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 600;
+    }
+    .nav-dropdown-content a {
+      color: var(--navy) !important;
+      text-transform: none !important;
+      font-size: 0.95rem !important;
+      font-weight: 500 !important;
+      font-family: "Work Sans", sans-serif !important;
+      padding: 0 !important;
+      letter-spacing: normal !important;
+      transition: color var(--tr);
+    }
+    .nav-dropdown-content a:hover {
+      color: var(--copper) !important;
+    }
+    .nav-dropdown-content a::after {
+      display: none !important;
+    }
+
     .nav-cta {
       display: inline-flex;
       align-items: center;
@@ -1760,6 +1819,25 @@
         transform: translateX(0)
       }
 
+      .nav-dropdown-content {
+        position: static;
+        box-shadow: none;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        padding: 0;
+        margin-top: 1.5rem;
+        background: transparent;
+        min-width: 100%;
+        gap: 1.5rem;
+        border: none;
+      }
+      .nav-dropdown {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+      }
+
       .navlinks a {
         font-size: 1.05rem;
         color: var(--navy)
@@ -1977,7 +2055,23 @@
         <a href="#vision">Vision &amp; Mission</a>
         <a href="#services">Services</a>
         <a href="#why">Why Us</a>
-        <a href="knc-logistics.html">About KNC</a>
+        <div class="nav-dropdown">
+          <a href="#" style="cursor: default;" onclick="event.preventDefault();">Our Ventures ▾</a>
+          <div class="nav-dropdown-content">
+            <div class="dropdown-item">
+              <span class="category">Logistics & Supply Chain</span>
+              <a href="https://curved-progress-bar.vercel.app/" target="_blank">KNC Logistics Solutions</a>
+            </div>
+            <div class="dropdown-item">
+              <span class="category">Freight Forwarding Division</span>
+              <a href="#" style="cursor: default; opacity: 0.6;" onclick="event.preventDefault();">Freyta by KNC <small style="font-size:0.7em; font-weight:normal; opacity:0.8;">(Coming Soon)</small></a>
+            </div>
+            <div class="dropdown-item">
+              <span class="category">Automotive Oils & Chemicals</span>
+              <a href="#" style="cursor: default; opacity: 0.6;" onclick="event.preventDefault();">Lubrex <small style="font-size:0.7em; font-weight:normal; opacity:0.8;">(Coming Soon)</small></a>
+            </div>
+          </div>
+        </div>
         <a href="#contact" class="nav-cta">Contact Us</a>
       </div>
     </nav>
@@ -2581,7 +2675,7 @@
             <li><a href="#vision">Vision &amp; Mission</a></li>
             <li><a href="#services">Our Services</a></li>
             <li><a href="#why">Why Choose Us</a></li>
-            <li><a href="knc-logistics.html">About KNC</a></li>
+            <li><a href="#" onclick="event.preventDefault();">Our Ventures</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
