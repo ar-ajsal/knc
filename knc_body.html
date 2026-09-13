@@ -335,18 +335,101 @@
             </p>
           </div>
 
-          <div class="contact-cta-block reveal-right">
-            <img src="images/knc_mark.png" alt="" aria-hidden="true" class="cta-mark" width="260" height="271">
-            <h3>One Partner. Complete Logistics.</h3>
-            <p>Talk to our team about freight forwarding, customs clearance, cross-border transport and project
-              logistics.</p>
-            <a href="mailto:info@masteryandprecise.com" class="btn btn-primary" style="display:inline-flex">
-              Start the Conversation
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                aria-hidden="true">
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </a>
+          <div class="contact-form-card reveal-right">
+            <div class="form-header">
+              <div class="form-badge">
+                <img src="images/knc_logo.png" alt="KNC Logo" width="36" height="35" class="form-badge-logo">
+                <span>Inquiry &amp; Quote</span>
+              </div>
+              <h3>Request a Solution</h3>
+              <p class="form-subtitle">Submit your cargo, shipment, or corporate requirements and our logistics specialists will respond promptly.</p>
+            </div>
+
+            <form id="knc-inquiry-form" action="https://api.web3forms.com/submit" method="POST">
+              <!-- Web3Forms Access Key & Configuration -->
+              <input type="hidden" name="access_key" value="c72d8fc7-1f58-42e2-8d38-35ee2857f7a7">
+              <input type="hidden" name="subject" value="New Business Inquiry — KNC Logistics Services">
+              <input type="hidden" name="from_name" value="KNC Logistics Inquiries">
+              <!-- Spam Honeypot -->
+              <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+              <div class="form-grid">
+                <!-- Full Name -->
+                <div class="form-group">
+                  <label for="form-name">Full Name <span class="req">*</span></label>
+                  <input type="text" id="form-name" name="name" required placeholder="e.g. John Doe" autocomplete="name">
+                </div>
+
+                <!-- Company Name -->
+                <div class="form-group">
+                  <label for="form-company">Company Name</label>
+                  <input type="text" id="form-company" name="company" placeholder="e.g. Acme Corporation" autocomplete="organization">
+                </div>
+
+                <!-- Business Email -->
+                <div class="form-group">
+                  <label for="form-email">Business Email <span class="req">*</span></label>
+                  <input type="email" id="form-email" name="email" required placeholder="e.g. name@company.com" autocomplete="email">
+                </div>
+
+                <!-- Phone / WhatsApp -->
+                <div class="form-group">
+                  <label for="form-phone">Phone / WhatsApp</label>
+                  <input type="tel" id="form-phone" name="phone" placeholder="e.g. +966 50 123 4567" autocomplete="tel">
+                </div>
+
+                <!-- Country -->
+                <div class="form-group">
+                  <label for="form-country">Country</label>
+                  <input type="text" id="form-country" name="country" placeholder="e.g. Saudi Arabia" autocomplete="country-name">
+                </div>
+
+                <!-- Service Required -->
+                <div class="form-group">
+                  <label for="form-service">Service Required <span class="req">*</span></label>
+                  <div class="select-wrap">
+                    <select id="form-service" name="service" required>
+                      <option value="" disabled selected>Select a Service *</option>
+                      <option value="Freight Forwarding">Freight Forwarding</option>
+                      <option value="Customs Clearance">Customs Clearance</option>
+                      <option value="Inland & Cross-Border Transport">Inland &amp; Cross-Border Transport</option>
+                      <option value="Project Logistics">Project Logistics</option>
+                      <option value="Event Logistics">Event Logistics</option>
+                      <option value="Rental Services">Rental Services</option>
+                      <option value="4PL Services">4PL Services</option>
+                      <option value="SABER Services">SABER Services</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Message / Requirement -->
+                <div class="form-group full-width">
+                  <label for="form-message">Message / Requirement <span class="req">*</span></label>
+                  <textarea id="form-message" name="message" rows="4" required placeholder="Describe your shipment route, cargo type, timeline, or logistics requirements..."></textarea>
+                </div>
+              </div>
+
+              <!-- Form Status / Result Alert -->
+              <div id="form-result" class="form-result" role="alert" style="display: none;"></div>
+
+              <!-- Submit Button -->
+              <button type="submit" id="knc-submit-btn" class="btn btn-primary form-submit-btn">
+                <span class="btn-text">Submit Inquiry</span>
+                <svg class="btn-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+                <span class="form-spinner" aria-hidden="true"></span>
+              </button>
+
+              <p class="form-privacy-note">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                </svg>
+                Your inquiry is confidential. We will never share your details.
+              </p>
+            </form>
           </div>
         </div>
       </div>
