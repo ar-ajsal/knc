@@ -1714,6 +1714,251 @@
       margin: 0 auto
     }
 
+    /* ======================== CONTACT FORM ======================== */
+    .contact-form-card {
+      background: linear-gradient(145deg, var(--navy) 0%, #152737 100%);
+      border-radius: var(--radius-lg);
+      padding: clamp(2rem, 3.5vw, 2.75rem);
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      position: relative;
+    }
+
+    .contact-form-card .form-header {
+      margin-bottom: 1.6rem;
+    }
+
+    .contact-form-card .form-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(181, 102, 58, 0.16);
+      border: 1px solid rgba(181, 102, 58, 0.3);
+      border-radius: 50px;
+      padding: 0.35rem 0.85rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .contact-form-card .form-badge-logo {
+      height: 18px;
+      width: auto;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+    }
+
+    .contact-form-card .form-badge span {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--copper-lt);
+      font-weight: 600;
+    }
+
+    .contact-form-card h3 {
+      font-size: clamp(1.5rem, 2.2vw, 1.95rem);
+      color: #fff;
+      margin-bottom: 0.45rem;
+      line-height: 1.2;
+    }
+
+    .contact-form-card .form-subtitle {
+      color: rgba(255, 255, 255, 0.68);
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.1rem;
+      margin-top: 1.5rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-group.full-width {
+      grid-column: span 2;
+    }
+
+    .form-group label {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.85);
+      font-weight: 600;
+    }
+
+    .form-group label .req {
+      color: var(--copper-lt);
+      font-weight: 700;
+      margin-left: 2px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1.5px solid rgba(255, 255, 255, 0.14);
+      border-radius: 10px;
+      padding: 0.75rem 1rem;
+      color: #fff;
+      font-family: "Work Sans", sans-serif;
+      font-size: 0.92rem;
+      transition: border-color var(--tr), background var(--tr), box-shadow var(--tr);
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: rgba(255, 255, 255, 0.38);
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--copper-lt);
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 0 0 3px rgba(181, 102, 58, 0.22);
+    }
+
+    .select-wrap {
+      position: relative;
+    }
+
+    .select-wrap select {
+      appearance: none;
+      -webkit-appearance: none;
+      cursor: pointer;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='rgba(255,255,255,0.7)' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      padding-right: 2.5rem;
+    }
+
+    .select-wrap select option {
+      background: var(--navy);
+      color: #fff;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 105px;
+    }
+
+    .form-submit-btn {
+      width: 100%;
+      justify-content: center;
+      margin-top: 1.4rem;
+      font-size: 0.84rem;
+      padding: 0.95rem 1.8rem;
+      cursor: pointer;
+    }
+
+    .form-submit-btn:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+      transform: none !important;
+      box-shadow: none !important;
+    }
+
+    .form-spinner {
+      display: none;
+      width: 15px;
+      height: 15px;
+      border: 2px solid rgba(255, 255, 255, 0.4);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin-submit 0.7s linear infinite;
+    }
+
+    .form-submit-btn.loading .form-spinner {
+      display: inline-block;
+    }
+
+    .form-submit-btn.loading .btn-arrow {
+      display: none;
+    }
+
+    @keyframes spin-submit {
+      to { transform: rotate(360deg); }
+    }
+
+    .form-result {
+      padding: 1rem 1.25rem;
+      border-radius: var(--radius);
+      margin-top: 1.2rem;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    .form-result.success {
+      background: rgba(34, 197, 94, 0.12);
+      border: 1.5px solid rgba(34, 197, 94, 0.35);
+      color: #86efac;
+    }
+
+    .form-result.error {
+      background: rgba(239, 68, 68, 0.12);
+      border: 1.5px solid rgba(239, 68, 68, 0.35);
+      color: #fca5a5;
+    }
+
+    .form-result .result-icon {
+      font-size: 1.15rem;
+      flex-shrink: 0;
+      line-height: 1;
+      margin-top: 2px;
+    }
+
+    .form-result strong {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+      color: #fff;
+    }
+
+    .form-result p {
+      margin: 0;
+      font-size: 0.86rem;
+      opacity: 0.92;
+    }
+
+    .form-privacy-note {
+      margin-top: 1rem;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.02em;
+      color: rgba(255, 255, 255, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      .form-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      .form-group.full-width {
+        grid-column: span 1;
+      }
+      .contact-form-card {
+        padding: 1.8rem 1.4rem;
+      }
+    }
+
     /* ======================== FOOTER ======================== */
     footer {
       padding: 4.5rem 0 3rem;
@@ -2623,17 +2868,99 @@
             </a>
           </div>
         </div>
-        <div class="contact-cta-block reveal-right">
-          <div style="font-size:3rem;margin-bottom:1rem">&#129309;</div>
-          <h3>Let&rsquo;s Build Something Extraordinary</h3>
-          <p>Whether you&rsquo;re looking to scale operations, enter new markets, or transform your business model
-            &mdash; we have the expertise and network to make it happen.</p>
-          <a href="mailto:info@masteryandprecise.com" class="btn btn-primary" style="display:inline-flex;margin:0 auto">
-            Start the Conversation
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <path d="M5 12h14M12 5l7 7-7 7" />
-            </svg>
-          </a>
+        <div class="contact-form-card reveal-right">
+          <div class="form-header">
+            <div class="form-badge">
+              <img src="images/logo.png-removebg-preview.png" alt="M&amp;P Logo" width="36" height="35" class="form-badge-logo">
+              <span>Business Inquiry</span>
+            </div>
+            <h3>Connect with Our Advisory Team</h3>
+            <p class="form-subtitle">Submit your organization&rsquo;s requirements and our strategic specialists will connect with you promptly.</p>
+          </div>
+
+          <form id="mp-inquiry-form" action="https://api.web3forms.com/submit" method="POST">
+            <!-- Web3Forms Access Key & Configuration -->
+            <input type="hidden" name="access_key" value="c72d8fc7-1f58-42e2-8d38-35ee2857f7a7">
+            <input type="hidden" name="subject" value="New Business Inquiry — Mastery &amp; Precise Business House">
+            <input type="hidden" name="from_name" value="Mastery &amp; Precise Business House">
+            <!-- Spam Honeypot -->
+            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+            <div class="form-grid">
+              <!-- Full Name -->
+              <div class="form-group">
+                <label for="form-name">Full Name <span class="req">*</span></label>
+                <input type="text" id="form-name" name="name" required placeholder="e.g. Eleanor Vance" autocomplete="name">
+              </div>
+
+              <!-- Company Name -->
+              <div class="form-group">
+                <label for="form-company">Company Name</label>
+                <input type="text" id="form-company" name="company" placeholder="e.g. Apex Global Corp" autocomplete="organization">
+              </div>
+
+              <!-- Business Email -->
+              <div class="form-group">
+                <label for="form-email">Business Email <span class="req">*</span></label>
+                <input type="email" id="form-email" name="email" required placeholder="e.g. name@company.com" autocomplete="email">
+              </div>
+
+              <!-- Phone / WhatsApp -->
+              <div class="form-group">
+                <label for="form-phone">Phone / WhatsApp</label>
+                <input type="tel" id="form-phone" name="phone" placeholder="e.g. +91 96332 53192" autocomplete="tel">
+              </div>
+
+              <!-- Country -->
+              <div class="form-group">
+                <label for="form-country">Country</label>
+                <input type="text" id="form-country" name="country" placeholder="e.g. India, Saudi Arabia, UAE" autocomplete="country-name">
+              </div>
+
+              <!-- Subject / Inquiry Type -->
+              <div class="form-group">
+                <label for="form-inquiry-type">Inquiry Type <span class="req">*</span></label>
+                <div class="select-wrap">
+                  <select id="form-inquiry-type" name="inquiry_type" required>
+                    <option value="" disabled selected>Select Inquiry Type *</option>
+                    <option value="General Business Inquiry">General Business Inquiry</option>
+                    <option value="Business Services">Business Services</option>
+                    <option value="Partnership / Collaboration">Partnership / Collaboration</option>
+                    <option value="Corporate Inquiry">Corporate Inquiry</option>
+                    <option value="Consultation">Consultation</option>
+                    <option value="Vendor / Supplier Inquiry">Vendor / Supplier Inquiry</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Message / Requirement -->
+              <div class="form-group full-width">
+                <label for="form-message">Message / Requirement <span class="req">*</span></label>
+                <textarea id="form-message" name="message" rows="4" required placeholder="Outline your inquiry, project scope, consulting requirements, or timeline..."></textarea>
+              </div>
+            </div>
+
+            <!-- Form Status / Result Alert -->
+            <div id="form-result" class="form-result" role="alert" style="display: none;"></div>
+
+            <!-- Submit Button -->
+            <button type="submit" id="mp-submit-btn" class="btn btn-primary form-submit-btn">
+              <span class="btn-text">Submit Inquiry</span>
+              <svg class="btn-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+              <span class="form-spinner" aria-hidden="true"></span>
+            </button>
+
+            <p class="form-privacy-note">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+              </svg>
+              Your inquiry is handled with strict confidentiality.
+            </p>
+          </form>
         </div>
       </div>
     </div>
@@ -2827,6 +3154,109 @@
     }, { threshold: 0.5 });
     counters.forEach(c => counterIO.observe(c));
 
+    // Web3Forms AJAX Submission Handler for Mastery & Precise Business House
+    (function () {
+      const form = document.getElementById('mp-inquiry-form');
+      if (!form) return;
+
+      const result = document.getElementById('form-result');
+      const submitBtn = document.getElementById('mp-submit-btn');
+      const btnText = submitBtn.querySelector('.btn-text');
+      const defaultBtnText = btnText.textContent;
+      let isSubmitting = false;
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        if (isSubmitting) return;
+
+        // HTML5 validation check
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
+
+        // Validate Inquiry Type select dropdown
+        const inquirySelect = document.getElementById('form-inquiry-type');
+        if (!inquirySelect.value) {
+          inquirySelect.focus();
+          inquirySelect.reportValidity();
+          return;
+        }
+
+        // Set loading & submitting state
+        isSubmitting = true;
+        submitBtn.disabled = true;
+        submitBtn.classList.add('loading');
+        btnText.textContent = 'Transmitting Inquiry...';
+
+        result.style.display = 'none';
+        result.className = 'form-result';
+
+        const formData = new FormData(form);
+
+        // Customize email subject for recipient clarity
+        const inquiryType = formData.get('inquiry_type') || 'General Inquiry';
+        const senderName = formData.get('name') || 'Website Visitor';
+        formData.set('subject', `New Business Inquiry [${inquiryType}] — ${senderName}`);
+
+        const object = Object.fromEntries(formData);
+        const json = JSON.stringify(object);
+
+        fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: json
+        })
+          .then(async (response) => {
+            const resData = await response.json();
+            if (response.status === 200 && resData.success) {
+              result.className = 'form-result success';
+              result.innerHTML = `
+                <span class="result-icon">&#10003;</span>
+                <div>
+                  <strong>Inquiry Transmitted Successfully</strong>
+                  <p>Thank you for reaching out to Mastery &amp; Precise Business House. Your inquiry has been forwarded to our team, and an executive advisor will connect with you shortly.</p>
+                </div>
+              `;
+              result.style.display = 'flex';
+              form.reset();
+            } else {
+              result.className = 'form-result error';
+              result.innerHTML = `
+                <span class="result-icon">&#9888;</span>
+                <div>
+                  <strong>Submission Error</strong>
+                  <p>${resData.message || 'There was an issue sending your inquiry. Please try again or email us directly at info@masteryandprecise.com.'}</p>
+                </div>
+              `;
+              result.style.display = 'flex';
+            }
+          })
+          .catch((error) => {
+            console.error('Web3Forms submission error:', error);
+            result.className = 'form-result error';
+            result.innerHTML = `
+              <span class="result-icon">&#9888;</span>
+              <div>
+                <strong>Network Connection Error</strong>
+                <p>Unable to connect to the inquiry service. Please verify your internet connection or email us directly at info@masteryandprecise.com.</p>
+              </div>
+            `;
+            result.style.display = 'flex';
+          })
+          .finally(() => {
+            isSubmitting = false;
+            submitBtn.disabled = false;
+            submitBtn.classList.remove('loading');
+            btnText.textContent = defaultBtnText;
+            result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          });
+      });
+    })();
   </script>
 </body>
 
