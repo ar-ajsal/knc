@@ -1954,7 +1954,7 @@
 
     .form-group input::placeholder,
     .form-group textarea::placeholder {
-      color: rgba(255, 255, 255, 0.38);
+      color: rgba(255, 255, 255, 0.45);
     }
 
     .form-group input:focus,
@@ -2084,6 +2084,34 @@
       text-align: center;
     }
 
+    .phone-input-group {
+      display: flex;
+      gap: 0.65rem;
+      align-items: stretch;
+      width: 100%;
+    }
+
+    .phone-code-wrap {
+      flex: 0 0 185px;
+      min-width: 145px;
+      position: relative;
+    }
+
+    .phone-code-wrap select {
+      padding: 0.75rem 1.85rem 0.75rem 0.85rem;
+      font-size: 0.86rem;
+      background-position: right 0.65rem center;
+      cursor: pointer;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    .phone-input-group input[type="tel"] {
+      flex: 1;
+      min-width: 0;
+    }
+
     @media (max-width: 640px) {
       .form-grid {
         grid-template-columns: 1fr;
@@ -2094,6 +2122,27 @@
       }
       .contact-form-card {
         padding: 1.8rem 1.4rem;
+      }
+      .phone-code-wrap {
+        flex: 0 0 145px;
+        min-width: 120px;
+      }
+      .phone-code-wrap select {
+        padding-left: 0.65rem;
+        padding-right: 1.6rem;
+        font-size: 0.82rem;
+        background-position: right 0.45rem center;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .phone-code-wrap {
+        flex: 0 0 125px;
+        min-width: 110px;
+      }
+      .phone-code-wrap select {
+        padding-left: 0.5rem;
+        font-size: 0.78rem;
       }
     }
 
@@ -3094,35 +3143,74 @@
               <!-- Full Name -->
               <div class="form-group">
                 <label for="form-name">Full Name <span class="req">*</span></label>
-                <input type="text" id="form-name" name="name" required placeholder="e.g. Eleanor Vance" autocomplete="name">
+                <input type="text" id="form-name" name="name" required placeholder="Full Name" autocomplete="name">
               </div>
 
               <!-- Company Name -->
               <div class="form-group">
                 <label for="form-company">Company Name</label>
-                <input type="text" id="form-company" name="company" placeholder="e.g. Apex Global Corp" autocomplete="organization">
+                <input type="text" id="form-company" name="company" placeholder="Company Name" autocomplete="organization">
               </div>
 
               <!-- Business Email -->
               <div class="form-group">
                 <label for="form-email">Business Email <span class="req">*</span></label>
-                <input type="email" id="form-email" name="email" required placeholder="e.g. name@company.com" autocomplete="email">
-              </div>
-
-              <!-- Phone / WhatsApp -->
-              <div class="form-group">
-                <label for="form-phone">Phone / WhatsApp</label>
-                <input type="tel" id="form-phone" name="phone" placeholder="e.g. +91 96332 53192" autocomplete="tel">
+                <input type="email" id="form-email" name="email" required placeholder="Business Email" autocomplete="email">
               </div>
 
               <!-- Country -->
               <div class="form-group">
                 <label for="form-country">Country</label>
-                <input type="text" id="form-country" name="country" placeholder="e.g. India, Saudi Arabia, UAE" autocomplete="country-name">
+                <input type="text" id="form-country" name="country" list="country-suggestions" placeholder="Country" autocomplete="country-name">
+                <datalist id="country-suggestions">
+                  <option value="India">
+                  <option value="United States">
+                  <option value="Saudi Arabia">
+                  <option value="United Arab Emirates">
+                  <option value="Qatar">
+                  <option value="Oman">
+                  <option value="Kuwait">
+                  <option value="Bahrain">
+                  <option value="United Kingdom">
+                  <option value="Singapore">
+                  <option value="Canada">
+                  <option value="Australia">
+                  <option value="Germany">
+                </datalist>
+              </div>
+
+              <!-- Phone / WhatsApp with Country Selector -->
+              <div class="form-group full-width">
+                <label for="form-phone">Phone / WhatsApp</label>
+                <div class="phone-input-group">
+                  <div class="select-wrap phone-code-wrap">
+                    <select id="form-country-code" name="country_code" aria-label="Country Calling Code">
+                      <option value="+91" selected>🇮🇳 India (+91)</option>
+                      <option value="+1">🇺🇸 United States (+1)</option>
+                      <option value="+966">🇸🇦 Saudi Arabia (+966)</option>
+                      <option value="+971">🇦🇪 UAE (+971)</option>
+                      <option value="+974">🇶🇦 Qatar (+974)</option>
+                      <option value="+968">🇴🇲 Oman (+968)</option>
+                      <option value="+965">🇰🇼 Kuwait (+965)</option>
+                      <option value="+973">🇧🇭 Bahrain (+973)</option>
+                      <option value="+44">🇬🇧 United Kingdom (+44)</option>
+                      <option value="+65">🇸🇬 Singapore (+65)</option>
+                      <option value="+1">🇨🇦 Canada (+1)</option>
+                      <option value="+61">🇦🇺 Australia (+61)</option>
+                      <option value="+49">🇩🇪 Germany (+49)</option>
+                      <option value="+33">🇫🇷 France (+33)</option>
+                      <option value="+20">🇪🇬 Egypt (+20)</option>
+                      <option value="+86">🇨🇳 China (+86)</option>
+                      <option value="+81">🇯🇵 Japan (+81)</option>
+                      <option value="+">🌐 Other</option>
+                    </select>
+                  </div>
+                  <input type="tel" id="form-phone" name="phone" placeholder="Phone Number" autocomplete="tel-national">
+                </div>
               </div>
 
               <!-- Subject / Inquiry Type -->
-              <div class="form-group">
+              <div class="form-group full-width">
                 <label for="form-inquiry-type">Inquiry Type <span class="req">*</span></label>
                 <div class="select-wrap">
                   <select id="form-inquiry-type" name="inquiry_type" required>
@@ -3141,7 +3229,7 @@
               <!-- Message / Requirement -->
               <div class="form-group full-width">
                 <label for="form-message">Message / Requirement <span class="req">*</span></label>
-                <textarea id="form-message" name="message" rows="4" required placeholder="Outline your inquiry, project scope, consulting requirements, or timeline..."></textarea>
+                <textarea id="form-message" name="message" rows="4" required placeholder="Message / Requirement"></textarea>
               </div>
             </div>
 
@@ -3467,6 +3555,14 @@
         result.className = 'form-result';
 
         const formData = new FormData(form);
+
+        // Format phone with selected country calling code
+        const countryCode = formData.get('country_code') || '';
+        const phone = (formData.get('phone') || '').toString().trim();
+        if (phone) {
+          formData.set('phone', phone.startsWith('+') ? phone : `${countryCode} ${phone}`.trim());
+        }
+        formData.delete('country_code');
 
         // Customize email subject for recipient clarity
         const inquiryType = formData.get('inquiry_type') || 'General Inquiry';
