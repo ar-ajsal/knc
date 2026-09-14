@@ -257,58 +257,196 @@
       display: flex;
       align-items: center;
     }
+
+    .nav-dropdown-trigger {
+      background: none;
+      border: none;
+      padding: 0 0 3px 0;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: .74rem;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      color: var(--muted);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
+      position: relative;
+      transition: color var(--tr);
+    }
+
+    .nav-dropdown-trigger::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0%;
+      height: 1.5px;
+      background: linear-gradient(90deg, var(--copper-lt), var(--gold));
+      transition: width .3s ease;
+    }
+
+    .nav-dropdown:hover .nav-dropdown-trigger,
+    .nav-dropdown.open .nav-dropdown-trigger {
+      color: var(--navy);
+    }
+
+    .nav-dropdown:hover .nav-dropdown-trigger::after,
+    .nav-dropdown.open .nav-dropdown-trigger::after {
+      width: 100%;
+    }
+
+    .nav-dropdown-trigger .caret {
+      font-size: 0.65rem;
+      transition: transform var(--tr);
+      display: inline-block;
+    }
+
+    .nav-dropdown.open .nav-dropdown-trigger .caret {
+      transform: rotate(180deg);
+    }
+
     .nav-dropdown-content {
       position: absolute;
       top: 100%;
       left: 0;
       background: var(--bg-card);
-      min-width: 270px;
+      min-width: 290px;
       box-shadow: var(--shadow-md);
       border-radius: var(--radius);
       opacity: 0;
       visibility: hidden;
       transform: translateY(10px);
-      transition: all var(--tr);
-      padding: 1.25rem;
+      transition: opacity var(--tr), transform var(--tr), visibility var(--tr);
+      padding: 0.85rem;
       z-index: 100;
       display: flex;
       flex-direction: column;
-      gap: 1.25rem;
+      gap: 0.45rem;
       border: 1px solid var(--line);
     }
-    .nav-dropdown:hover .nav-dropdown-content {
+
+    .nav-dropdown:hover .nav-dropdown-content,
+    .nav-dropdown.open .nav-dropdown-content {
       opacity: 1;
       visibility: visible;
       transform: translateY(0);
     }
-    .nav-dropdown-content .dropdown-item {
+
+    .country-item {
       display: flex;
       flex-direction: column;
-      gap: 0.15rem;
+      border-radius: 8px;
+      border: 1px solid transparent;
+      transition: border-color var(--tr), background var(--tr);
     }
-    .nav-dropdown-content .category {
-      font-size: 0.65rem;
-      color: var(--copper-lt);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
+
+    .country-btn {
+      width: 100%;
+      background: none;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.65rem 0.8rem;
+      border-radius: 8px;
+      cursor: pointer;
       font-family: "Space Grotesk", sans-serif;
+      font-size: 0.86rem;
       font-weight: 600;
+      color: var(--navy);
+      text-align: left;
+      transition: background var(--tr), color var(--tr);
+      gap: 0.75rem;
     }
-    .nav-dropdown-content a {
+
+    .country-name {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+    }
+
+    .country-arrow {
+      font-size: 0.7rem;
+      color: var(--copper-lt);
+      transition: transform var(--tr);
+      display: inline-block;
+    }
+
+    .country-item:hover .country-btn,
+    .country-item.open .country-btn {
+      background: rgba(181, 102, 58, 0.08);
+      color: var(--copper);
+    }
+
+    .country-item:hover .country-arrow,
+    .country-item.open .country-arrow {
+      transform: rotate(90deg);
+    }
+
+    .country-vendors {
+      display: none;
+      flex-direction: column;
+      padding: 0.35rem 0.65rem 0.5rem 1.6rem;
+      gap: 0.35rem;
+      animation: fadeInSub 0.22s ease forwards;
+    }
+
+    @keyframes fadeInSub {
+      from { opacity: 0; transform: translateY(-4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .country-item:hover .country-vendors,
+    .country-item.open .country-vendors {
+      display: flex;
+    }
+
+    .vendor-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
       color: var(--navy) !important;
-      text-transform: none !important;
-      font-size: 0.95rem !important;
-      font-weight: 500 !important;
       font-family: "Work Sans", sans-serif !important;
-      padding: 0 !important;
+      font-size: 0.88rem !important;
+      font-weight: 500 !important;
+      text-transform: none !important;
       letter-spacing: normal !important;
-      transition: color var(--tr);
+      padding: 0.35rem 0.55rem !important;
+      border-radius: 6px;
+      transition: color var(--tr), background var(--tr), transform var(--tr) !important;
+      text-decoration: none !important;
     }
-    .nav-dropdown-content a:hover {
-      color: var(--copper) !important;
-    }
-    .nav-dropdown-content a::after {
+
+    .vendor-link::after {
       display: none !important;
+    }
+
+    .vendor-link .vendor-bullet {
+      color: var(--copper-lt);
+      font-size: 0.95rem;
+      transition: transform var(--tr);
+    }
+
+    .vendor-link:hover {
+      color: var(--copper) !important;
+      background: rgba(181, 102, 58, 0.08);
+      transform: translateX(4px);
+    }
+
+    .vendor-link:hover .vendor-bullet {
+      transform: translateX(2px);
+    }
+
+    .vendor-empty {
+      font-family: "Work Sans", sans-serif;
+      font-size: 0.8rem;
+      font-style: italic;
+      color: var(--muted);
+      opacity: 0.75;
+      padding: 0.25rem 0.55rem;
+      user-select: none;
+      cursor: default;
     }
 
     .nav-cta {
@@ -2065,23 +2203,63 @@
         transform: translateX(0)
       }
 
+      .nav-dropdown {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+      }
+
+      .nav-dropdown-trigger {
+        font-size: 1.05rem;
+        color: var(--navy);
+        padding: 0.3rem 0;
+        width: 100%;
+        justify-content: space-between;
+      }
+
       .nav-dropdown-content {
+        display: none;
         position: static;
         box-shadow: none;
         opacity: 1;
         visibility: visible;
         transform: none;
-        padding: 0;
-        margin-top: 1.5rem;
+        padding: 0.4rem 0 0.4rem 0.6rem;
+        margin-top: 0.5rem;
         background: transparent;
         min-width: 100%;
-        gap: 1.5rem;
-        border: none;
-      }
-      .nav-dropdown {
-        flex-direction: column;
-        align-items: flex-start;
         width: 100%;
+        gap: 0.5rem;
+        border: none;
+        border-left: 2px solid var(--copper-gw);
+      }
+
+      .nav-dropdown.open .nav-dropdown-content {
+        display: flex;
+      }
+
+      .country-item {
+        width: 100%;
+      }
+
+      .country-btn {
+        font-size: 0.95rem;
+        padding: 0.5rem 0.6rem;
+      }
+
+      @media (hover: none) {
+        .country-item:not(.open) .country-vendors {
+          display: none !important;
+        }
+      }
+
+      .country-vendors {
+        padding-left: 1.2rem;
+      }
+
+      .vendor-link {
+        font-size: 0.92rem !important;
+        padding: 0.4rem 0.5rem !important;
       }
 
       .navlinks a {
@@ -2301,20 +2479,46 @@
         <a href="#vision">Vision &amp; Mission</a>
         <a href="#services">Services</a>
         <a href="#why">Why Us</a>
-        <div class="nav-dropdown">
-          <a href="#" style="cursor: default;" onclick="event.preventDefault();">Our Ventures ▾</a>
-          <div class="nav-dropdown-content">
-            <div class="dropdown-item">
-              <span class="category">Logistics & Supply Chain</span>
-              <a href="https://curved-progress-bar.vercel.app/" target="_blank">KNC Logistics Solutions</a>
+        <div class="nav-dropdown" id="vendorsDropdown">
+          <button type="button" class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+            <span>Our Vendors</span>
+            <span class="caret">▾</span>
+          </button>
+          <div class="nav-dropdown-content" role="menu" aria-label="Our Vendors by Country">
+            <!-- 1. Saudi Arabia -->
+            <div class="country-item" data-country="sa">
+              <button type="button" class="country-btn" aria-expanded="false">
+                <span class="country-name">Saudi Arabia</span>
+                <span class="country-arrow">&#9656;</span>
+              </button>
+              <div class="country-vendors">
+                <a href="https://curved-progress-bar.vercel.app/" target="_blank" rel="noopener" class="vendor-link">
+                  <span class="vendor-bullet">&rarr;</span>
+                  <span>KNC Logistics Services</span>
+                </a>
+              </div>
             </div>
-            <div class="dropdown-item">
-              <span class="category">Freight Forwarding Division</span>
-              <a href="#" style="cursor: default; opacity: 0.6;" onclick="event.preventDefault();">Freyta by KNC <small style="font-size:0.7em; font-weight:normal; opacity:0.8;">(Coming Soon)</small></a>
+
+            <!-- 2. United Arab Emirates -->
+            <div class="country-item" data-country="ae">
+              <button type="button" class="country-btn" aria-expanded="false">
+                <span class="country-name">United Arab Emirates</span>
+                <span class="country-arrow">&#9656;</span>
+              </button>
+              <div class="country-vendors">
+                <span class="vendor-empty">No vendors available</span>
+              </div>
             </div>
-            <div class="dropdown-item">
-              <span class="category">Automotive Oils & Chemicals</span>
-              <a href="#" style="cursor: default; opacity: 0.6;" onclick="event.preventDefault();">Lubrex <small style="font-size:0.7em; font-weight:normal; opacity:0.8;">(Coming Soon)</small></a>
+
+            <!-- 3. United States -->
+            <div class="country-item" data-country="us">
+              <button type="button" class="country-btn" aria-expanded="false">
+                <span class="country-name">United States</span>
+                <span class="country-arrow">&#9656;</span>
+              </button>
+              <div class="country-vendors">
+                <span class="vendor-empty">No vendors available</span>
+              </div>
             </div>
           </div>
         </div>
@@ -3003,7 +3207,7 @@
             <li><a href="#vision">Vision &amp; Mission</a></li>
             <li><a href="#services">Our Services</a></li>
             <li><a href="#why">Why Choose Us</a></li>
-            <li><a href="#" onclick="event.preventDefault();">Our Ventures</a></li>
+            <li><a href="#" onclick="event.preventDefault();">Our Vendors</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
@@ -3046,6 +3250,75 @@
       toggle.classList.remove('active');
       toggle.setAttribute('aria-expanded', 'false');
     }));
+
+    // Multi-level "Our Vendors" Navigation Interaction (Desktop + Mobile)
+    (function () {
+      const dropdown = document.getElementById('vendorsDropdown');
+      if (!dropdown) return;
+
+      const trigger = dropdown.querySelector('.nav-dropdown-trigger');
+      const countryItems = dropdown.querySelectorAll('.country-item');
+
+      // Toggle Our Vendors dropdown on click
+      trigger.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        const isOpen = dropdown.classList.toggle('open');
+        trigger.setAttribute('aria-expanded', isOpen);
+      });
+
+      // Handle Country click / expand
+      countryItems.forEach(item => {
+        const countryBtn = item.querySelector('.country-btn');
+        if (!countryBtn) return;
+
+        countryBtn.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+
+          const wasOpen = item.classList.contains('open');
+
+          // Close other open countries (accordion behavior)
+          countryItems.forEach(sibling => {
+            if (sibling !== item) {
+              sibling.classList.remove('open');
+              const sBtn = sibling.querySelector('.country-btn');
+              if (sBtn) sBtn.setAttribute('aria-expanded', 'false');
+            }
+          });
+
+          const isNowOpen = !wasOpen;
+          item.classList.toggle('open', isNowOpen);
+          countryBtn.setAttribute('aria-expanded', isNowOpen);
+        });
+      });
+
+      // Close dropdown when clicking anywhere outside
+      document.addEventListener('click', function (e) {
+        if (!dropdown.contains(e.target)) {
+          dropdown.classList.remove('open');
+          trigger.setAttribute('aria-expanded', 'false');
+          countryItems.forEach(item => {
+            item.classList.remove('open');
+            const btn = item.querySelector('.country-btn');
+            if (btn) btn.setAttribute('aria-expanded', 'false');
+          });
+        }
+      });
+
+      // Escape key to close
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && dropdown.classList.contains('open')) {
+          dropdown.classList.remove('open');
+          trigger.setAttribute('aria-expanded', 'false');
+          countryItems.forEach(item => {
+            item.classList.remove('open');
+            const btn = item.querySelector('.country-btn');
+            if (btn) btn.setAttribute('aria-expanded', 'false');
+          });
+        }
+      });
+    })();
 
     // Scroll reveal
     const io = new IntersectionObserver((entries) => {
