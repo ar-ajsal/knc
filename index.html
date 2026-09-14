@@ -1981,8 +1981,17 @@
     }
 
     .select-wrap select option {
-      background: var(--navy);
+      background: #0f1e2c;
       color: #fff;
+      padding: 8px 12px;
+    }
+
+    .select-wrap select option:disabled {
+      color: rgba(255, 255, 255, 0.45);
+    }
+
+    .select-wrap select:has(option[value=""]:checked) {
+      color: rgba(255, 255, 255, 0.45);
     }
 
     .form-group textarea {
@@ -3161,22 +3170,72 @@
               <!-- Country -->
               <div class="form-group">
                 <label for="form-country">Country</label>
-                <input type="text" id="form-country" name="country" list="country-suggestions" placeholder="Country" autocomplete="country-name">
-                <datalist id="country-suggestions">
-                  <option value="India">
-                  <option value="United States">
-                  <option value="Saudi Arabia">
-                  <option value="United Arab Emirates">
-                  <option value="Qatar">
-                  <option value="Oman">
-                  <option value="Kuwait">
-                  <option value="Bahrain">
-                  <option value="United Kingdom">
-                  <option value="Singapore">
-                  <option value="Canada">
-                  <option value="Australia">
-                  <option value="Germany">
-                </datalist>
+                <div class="select-wrap">
+                  <select id="form-country" name="country">
+                    <option value="" disabled selected>Select Country</option>
+                    <option value="India">India</option>
+                    <option value="Saudi Arabia">Saudi Arabia</option>
+                    <option value="United Arab Emirates">United Arab Emirates</option>
+                    <option value="United States">United States</option>
+                    <option value="Qatar">Qatar</option>
+                    <option value="Oman">Oman</option>
+                    <option value="Kuwait">Kuwait</option>
+                    <option value="Bahrain">Bahrain</option>
+                    <option value="United Kingdom">United Kingdom</option>
+                    <option value="Singapore">Singapore</option>
+                    <option value="Australia">Australia</option>
+                    <option value="Canada">Canada</option>
+                    <option value="Germany">Germany</option>
+                    <option value="France">France</option>
+                    <option value="Egypt">Egypt</option>
+                    <option value="China">China</option>
+                    <option value="Japan">Japan</option>
+                    <option value="Malaysia">Malaysia</option>
+                    <option value="Indonesia">Indonesia</option>
+                    <option value="Turkey">Turkey</option>
+                    <option value="Italy">Italy</option>
+                    <option value="Spain">Spain</option>
+                    <option value="Netherlands">Netherlands</option>
+                    <option value="Switzerland">Switzerland</option>
+                    <option value="South Africa">South Africa</option>
+                    <option value="Brazil">Brazil</option>
+                    <option value="New Zealand">New Zealand</option>
+                    <option value="Ireland">Ireland</option>
+                    <option value="Sweden">Sweden</option>
+                    <option value="Norway">Norway</option>
+                    <option value="Denmark">Denmark</option>
+                    <option value="Belgium">Belgium</option>
+                    <option value="Austria">Austria</option>
+                    <option value="Portugal">Portugal</option>
+                    <option value="Poland">Poland</option>
+                    <option value="Russia">Russia</option>
+                    <option value="South Korea">South Korea</option>
+                    <option value="Thailand">Thailand</option>
+                    <option value="Vietnam">Vietnam</option>
+                    <option value="Philippines">Philippines</option>
+                    <option value="Bangladesh">Bangladesh</option>
+                    <option value="Pakistan">Pakistan</option>
+                    <option value="Sri Lanka">Sri Lanka</option>
+                    <option value="Nepal">Nepal</option>
+                    <option value="Maldives">Maldives</option>
+                    <option value="Jordan">Jordan</option>
+                    <option value="Lebanon">Lebanon</option>
+                    <option value="Iraq">Iraq</option>
+                    <option value="Yemen">Yemen</option>
+                    <option value="Morocco">Morocco</option>
+                    <option value="Kenya">Kenya</option>
+                    <option value="Nigeria">Nigeria</option>
+                    <option value="Ghana">Ghana</option>
+                    <option value="Mexico">Mexico</option>
+                    <option value="Argentina">Argentina</option>
+                    <option value="Chile">Chile</option>
+                    <option value="Colombia">Colombia</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+                <div id="other-country-wrap" style="display: none; margin-top: 0.5rem;">
+                  <input type="text" id="form-other-country" name="other_country" placeholder="Please specify your country">
+                </div>
               </div>
 
               <!-- Phone / WhatsApp with Country Selector -->
@@ -3526,6 +3585,39 @@
       const defaultBtnText = btnText.textContent;
       let isSubmitting = false;
 
+      const countrySelect = document.getElementById('form-country');
+      const otherCountryWrap = document.getElementById('other-country-wrap');
+      const otherCountryInput = document.getElementById('form-other-country');
+      const inquirySelect = document.getElementById('form-inquiry-type');
+
+      function syncSelectColor(sel) {
+        if (!sel) return;
+        sel.style.color = sel.value ? '#ffffff' : 'rgba(255, 255, 255, 0.45)';
+      }
+
+      if (countrySelect) {
+        countrySelect.addEventListener('change', function () {
+          syncSelectColor(this);
+          if (otherCountryWrap) {
+            if (this.value === 'Other') {
+              otherCountryWrap.style.display = 'block';
+              if (otherCountryInput) otherCountryInput.focus();
+            } else {
+              otherCountryWrap.style.display = 'none';
+              if (otherCountryInput) otherCountryInput.value = '';
+            }
+          }
+        });
+        syncSelectColor(countrySelect);
+      }
+
+      if (inquirySelect) {
+        inquirySelect.addEventListener('change', function () {
+          syncSelectColor(this);
+        });
+        syncSelectColor(inquirySelect);
+      }
+
       form.addEventListener('submit', function (e) {
         e.preventDefault();
 
@@ -3538,8 +3630,7 @@
         }
 
         // Validate Inquiry Type select dropdown
-        const inquirySelect = document.getElementById('form-inquiry-type');
-        if (!inquirySelect.value) {
+        if (inquirySelect && !inquirySelect.value) {
           inquirySelect.focus();
           inquirySelect.reportValidity();
           return;
@@ -3563,6 +3654,14 @@
           formData.set('phone', phone.startsWith('+') ? phone : `${countryCode} ${phone}`.trim());
         }
         formData.delete('country_code');
+
+        // Handle "Other" country specification
+        const countryVal = formData.get('country') || '';
+        const otherCountry = (formData.get('other_country') || '').toString().trim();
+        if (countryVal === 'Other' && otherCountry) {
+          formData.set('country', otherCountry);
+        }
+        formData.delete('other_country');
 
         // Customize email subject for recipient clarity
         const inquiryType = formData.get('inquiry_type') || 'General Inquiry';
@@ -3593,6 +3692,9 @@
               `;
               result.style.display = 'flex';
               form.reset();
+              syncSelectColor(countrySelect);
+              syncSelectColor(inquirySelect);
+              if (otherCountryWrap) otherCountryWrap.style.display = 'none';
             } else {
               result.className = 'form-result error';
               result.innerHTML = `
