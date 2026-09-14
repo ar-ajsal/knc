@@ -2481,10 +2481,10 @@
         <a href="#why">Why Us</a>
         <div class="nav-dropdown" id="vendorsDropdown">
           <button type="button" class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">
-            <span>Our venture </span>
+            <span>Our Ventures</span>
             <span class="caret">▾</span>
           </button>
-          <div class="nav-dropdown-content" role="menu" aria-label="Our venture by Country">
+          <div class="nav-dropdown-content" role="menu" aria-label="Our Ventures by Country">
             <!-- 1. Saudi Arabia -->
             <div class="country-item" data-country="sa">
               <button type="button" class="country-btn" aria-expanded="false">
@@ -2506,7 +2506,7 @@
                 <span class="country-arrow">&#9656;</span>
               </button>
               <div class="country-vendors">
-                <span class="vendor-empty">No vendors available</span>
+                <span class="vendor-empty">No ventures available</span>
               </div>
             </div>
 
@@ -2517,7 +2517,7 @@
                 <span class="country-arrow">&#9656;</span>
               </button>
               <div class="country-vendors">
-                <span class="vendor-empty">No vendors available</span>
+                <span class="vendor-empty">No ventures available</span>
               </div>
             </div>
           </div>
@@ -3207,7 +3207,7 @@
             <li><a href="#vision">Vision &amp; Mission</a></li>
             <li><a href="#services">Our Services</a></li>
             <li><a href="#why">Why Choose Us</a></li>
-            <li><a href="#" onclick="event.preventDefault();">Our Vendors</a></li>
+            <li><a href="#" onclick="event.preventDefault();">Our Ventures</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
@@ -3251,7 +3251,7 @@
       toggle.setAttribute('aria-expanded', 'false');
     }));
 
-    // Multi-level "Our Vendors" Navigation Interaction (Desktop + Mobile)
+    // Multi-level "Our Ventures" Navigation Interaction (Desktop + Mobile)
     (function () {
       const dropdown = document.getElementById('vendorsDropdown');
       if (!dropdown) return;
@@ -3259,7 +3259,7 @@
       const trigger = dropdown.querySelector('.nav-dropdown-trigger');
       const countryItems = dropdown.querySelectorAll('.country-item');
 
-      // Toggle Our Vendors dropdown on click
+      // Toggle Our Ventures dropdown on click
       trigger.addEventListener('click', function (e) {
         e.preventDefault();
         e.stopPropagation();
