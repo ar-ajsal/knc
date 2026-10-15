@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mastery &amp; Precise Business House &mdash; Connecting Purpose with Progress</title>
-  <link rel="icon" type="image/png" href="images/logo.png.png">
+  <link rel="icon" type="image/svg+xml" href="images/mp-mark.svg">
   <meta name="description"
     content="Mastery &amp; Precise Business House Private Limited &mdash; A multidisciplinary consulting organization delivering strategic advisory, logistics, healthcare, trade, and business excellence.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,23 +16,23 @@
   <style>
     /* ======================== TOKENS ======================== */
     :root {
-      --bg: #faf7f2;
-      --bg-alt: #f3ede3;
+      --bg: #f7fafb;
+      --bg-alt: #edf3f5;
       --bg-card: #ffffff;
       --bg-glass: rgba(255, 255, 255, 0.82);
-      --navy: #0d1a24;
-      --navy-mid: #1c3244;
-      --copper: #b5663a;
-      --copper-lt: #d4824e;
-      --copper-gw: rgba(181, 102, 58, 0.14);
-      --gold: #c9870a;
-      --text: #1a2e3d;
-      --muted: #5a7388;
-      --line: rgba(13, 26, 36, 0.1);
-      --line-b: rgba(13, 26, 36, 0.16);
-      --shadow-sm: 0 2px 12px rgba(13, 26, 36, 0.08);
-      --shadow-md: 0 8px 40px rgba(13, 26, 36, 0.12);
-      --shadow-lg: 0 20px 64px rgba(13, 26, 36, 0.14);
+      --navy: #082A3A;
+      --navy-mid: #0B3C52;
+      --copper: #B8802A;
+      --copper-lt: #D9A646;
+      --copper-gw: rgba(192,138,44, 0.14);
+      --gold: #C08A2C;
+      --text: #0F3547;
+      --muted: #55727F;
+      --line: rgba(8,42,58, 0.1);
+      --line-b: rgba(8,42,58, 0.16);
+      --shadow-sm: 0 2px 12px rgba(8,42,58, 0.08);
+      --shadow-md: 0 8px 40px rgba(8,42,58, 0.12);
+      --shadow-lg: 0 20px 64px rgba(8,42,58, 0.14);
       --radius: 12px;
       --radius-lg: 24px;
       --tr: 0.32s cubic-bezier(.4, 0, .2, 1);
@@ -59,8 +59,25 @@
       overflow-x: hidden
     }
 
+    html {
+      overflow-x: clip
+    }
+
+    @media(max-width:768px) {
+
+      .reveal-left,
+      .reveal-right {
+        transform: translateY(24px)
+      }
+
+      .reveal-left.in,
+      .reveal-right.in {
+        transform: translateY(0)
+      }
+    }
+
     mark {
-      background: linear-gradient(120deg, var(--copper-gw), rgba(201, 135, 10, 0.15));
+      background: linear-gradient(120deg, var(--copper-gw), rgba(192,138,44, 0.15));
       color: var(--copper);
       padding: 0 0.15em;
       border-radius: 4px;
@@ -144,7 +161,7 @@
     header.scrolled {
       background: rgba(250, 247, 242, .96);
       backdrop-filter: blur(20px) saturate(1.5);
-      box-shadow: 0 1px 0 var(--line-b), 0 6px 28px rgba(13, 26, 36, .08)
+      box-shadow: 0 1px 0 var(--line-b), 0 6px 28px rgba(8,42,58, .08)
     }
 
     nav.wrap {
@@ -375,7 +392,7 @@
 
     .country-item:hover .country-btn,
     .country-item.open .country-btn {
-      background: rgba(181, 102, 58, 0.08);
+      background: rgba(192,138,44, 0.08);
       color: var(--copper);
     }
 
@@ -430,7 +447,7 @@
 
     .vendor-link:hover {
       color: var(--copper) !important;
-      background: rgba(181, 102, 58, 0.08);
+      background: rgba(192,138,44, 0.08);
       transform: translateX(4px);
     }
 
@@ -523,7 +540,7 @@
 
     .btn-primary:hover {
       transform: translateY(-3px);
-      box-shadow: 0 14px 40px rgba(181, 102, 58, .32)
+      box-shadow: 0 14px 40px rgba(192,138,44, .32)
     }
 
     .btn-ghost {
@@ -618,7 +635,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse 80% 60% at 65% 40%, rgba(181, 102, 58, .08) 0%, transparent 65%), linear-gradient(180deg, var(--bg) 0%, transparent 25%, transparent 75%, var(--bg) 100%), linear-gradient(90deg, var(--bg) 0%, transparent 45%)
+      background: radial-gradient(ellipse 80% 60% at 65% 40%, rgba(192,138,44, .08) 0%, transparent 65%), linear-gradient(180deg, var(--bg) 0%, transparent 25%, transparent 75%, var(--bg) 100%), linear-gradient(90deg, var(--bg) 0%, transparent 45%)
     }
 
     .hero-content {
@@ -688,7 +705,8 @@
       background: linear-gradient(135deg, var(--copper), var(--gold));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      background-clip: text
+      background-clip: text;
+      padding: 0 .14em .06em 0
     }
 
     .hero p.lede {
@@ -752,7 +770,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      border: 1.5px solid rgba(181, 102, 58, .2);
+      border: 1.5px solid rgba(192,138,44, .2);
       border-radius: var(--radius-lg);
       pointer-events: none
     }
@@ -768,7 +786,7 @@
     .hero-network svg {
       width: 100%;
       height: 100%;
-      filter: drop-shadow(0 0 16px rgba(181, 102, 58, .25))
+      filter: drop-shadow(0 0 16px rgba(192,138,44, .25))
     }
 
     .node-label {
@@ -790,7 +808,7 @@
     }
 
     .edge {
-      stroke: rgba(13, 26, 36, .1);
+      stroke: rgba(8,42,58, .1);
       stroke-width: 1
     }
 
@@ -951,7 +969,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      border: 1.5px solid rgba(181, 102, 58, .15);
+      border: 1.5px solid rgba(192,138,44, .15);
       border-radius: var(--radius-lg);
       pointer-events: none
     }
@@ -999,7 +1017,7 @@
       padding: 1.8rem 2rem;
       border-left: 3px solid;
       border-image: linear-gradient(180deg, var(--copper), var(--gold)) 1;
-      background: linear-gradient(90deg, rgba(181, 102, 58, .05), transparent);
+      background: linear-gradient(90deg, rgba(192,138,44, .05), transparent);
       border-radius: 0 var(--radius) var(--radius) 0;
       margin-top: 1.5rem
     }
@@ -1071,7 +1089,7 @@
     .leader-photo-wrap {
       position: relative;
       overflow: hidden;
-      background: linear-gradient(135deg, #e8e0d6, #d4cbc0);
+      background: linear-gradient(135deg, #dbe5e9, #d4cbc0);
     }
 
     .leader-photo {
@@ -1288,11 +1306,11 @@
     }
 
     .vm-card-full:nth-child(1) .vm-card-overlay {
-      background: linear-gradient(135deg, rgba(13, 26, 36, .88) 0%, rgba(28, 50, 68, .75) 40%, rgba(181, 102, 58, .2) 100%)
+      background: linear-gradient(135deg, rgba(8,42,58, .88) 0%, rgba(11,60,82, .75) 40%, rgba(192,138,44, .2) 100%)
     }
 
     .vm-card-full:nth-child(2) .vm-card-overlay {
-      background: linear-gradient(225deg, rgba(13, 26, 36, .88) 0%, rgba(28, 50, 68, .75) 40%, rgba(201, 135, 10, .15) 100%)
+      background: linear-gradient(225deg, rgba(8,42,58, .88) 0%, rgba(11,60,82, .75) 40%, rgba(192,138,44, .15) 100%)
     }
 
     .vm-card-content {
@@ -1431,7 +1449,7 @@
       width: 600px;
       height: 600px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(181, 102, 58, .06) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(192,138,44, .06) 0%, transparent 70%);
       pointer-events: none
     }
 
@@ -1484,7 +1502,7 @@
       width: 160px;
       height: 160px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(181, 102, 58, .06) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(192,138,44, .06) 0%, transparent 70%);
       pointer-events: none;
       transition: opacity var(--tr)
     }
@@ -1498,8 +1516,8 @@
       height: 72px;
       margin: 0 auto 1.5rem;
       border-radius: 20px;
-      background: linear-gradient(135deg, rgba(181, 102, 58, .1), rgba(201, 135, 10, .06));
-      border: 1.5px solid rgba(181, 102, 58, .18);
+      background: linear-gradient(135deg, rgba(192,138,44, .1), rgba(192,138,44, .06));
+      border: 1.5px solid rgba(192,138,44, .18);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1564,7 +1582,7 @@
     .service-card:hover {
       transform: translateY(-8px);
       box-shadow: var(--shadow-lg);
-      border-color: rgba(181, 102, 58, .3)
+      border-color: rgba(192,138,44, .3)
     }
 
     .service-img {
@@ -1804,8 +1822,8 @@
     .contact-card-icon {
       width: 44px;
       height: 44px;
-      background: linear-gradient(135deg, rgba(181, 102, 58, .12), rgba(181, 102, 58, .04));
-      border: 1.5px solid rgba(181, 102, 58, .2);
+      background: linear-gradient(135deg, rgba(192,138,44, .12), rgba(192,138,44, .04));
+      border: 1.5px solid rgba(192,138,44, .2);
       border-radius: 12px;
       display: grid;
       place-items: center;
@@ -1870,8 +1888,8 @@
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      background: rgba(181, 102, 58, 0.16);
-      border: 1px solid rgba(181, 102, 58, 0.3);
+      background: rgba(192,138,44, 0.16);
+      border: 1px solid rgba(192,138,44, 0.3);
       border-radius: 50px;
       padding: 0.35rem 0.85rem;
       margin-bottom: 0.9rem;
@@ -1963,7 +1981,7 @@
       outline: none;
       border-color: var(--copper-lt);
       background: rgba(255, 255, 255, 0.1);
-      box-shadow: 0 0 0 3px rgba(181, 102, 58, 0.22);
+      box-shadow: 0 0 0 3px rgba(192,138,44, 0.22);
     }
 
     .select-wrap {
@@ -2222,6 +2240,12 @@
       flex-wrap: wrap
     }
 
+    .footer-bottom mark {
+      background: none;
+      color: var(--copper-lt);
+      padding: 0
+    }
+
     .footer-bottom p {
       font-family: "Space Grotesk", sans-serif;
       font-size: .72rem;
@@ -2254,7 +2278,7 @@
         transform: translateX(110%);
         transition: transform .4s cubic-bezier(.4, 0, .2, 1);
         border-left: 1.5px solid var(--line-b);
-        box-shadow: -20px 0 60px rgba(13, 26, 36, .15)
+        box-shadow: -20px 0 60px rgba(8,42,58, .15)
       }
 
       .navlinks.open {
@@ -2390,7 +2414,7 @@
       }
 
       .vm-card-full:nth-child(2) .vm-card-overlay {
-        background: linear-gradient(135deg, rgba(13, 26, 36, .88) 0%, rgba(28, 50, 68, .75) 50%, rgba(201, 135, 10, .2) 100%)
+        background: linear-gradient(135deg, rgba(8,42,58, .88) 0%, rgba(11,60,82, .75) 50%, rgba(192,138,44, .2) 100%)
       }
 
       .vm-card-full:nth-child(2) .vm-card-content .eyebrow {
@@ -2468,7 +2492,7 @@
     #preloader {
       position: fixed;
       inset: 0;
-      background: #faf7f2;
+      background: #f7fafb;
       z-index: 9999;
       display: flex;
       align-items: center;
@@ -2482,7 +2506,7 @@
     }
 
     .loader-logo {
-      width: 140px;
+      width: 280px;
       animation: pulse-loader 1.2s infinite alternate ease-in-out;
     }
 
@@ -2504,7 +2528,7 @@
 
   <!-- PRELOADER -->
   <div id="preloader">
-    <img src="images/logo.png-removebg-preview.png" alt="M&amp;P Logo" class="loader-logo">
+    <img src="images/mp-logo-full.svg" alt="Mastery &amp; Precise" class="loader-logo">
   </div>
 
   <canvas id="bg-canvas"></canvas>
@@ -2514,7 +2538,7 @@
     <nav class="wrap">
       <a href="#top" class="logo"
         style="padding: 0.2rem 0; flex-direction: row; align-items: center; gap: 0.7rem; text-decoration: none;">
-        <img src="images/logo.png-removebg-preview.png" alt="M&amp;P Logo">
+        <img src="images/mp-mark.svg" alt="Mastery &amp; Precise logo">
         <span class="logo-text-block"
           style="display: flex; flex-direction: column; align-items: flex-start; line-height: 1.15;">
           <span class="logo-main-name"
@@ -2522,11 +2546,11 @@
             &amp; PRECISE</span>
           <span class="logo-sub"
             style="display: flex; align-items: center; gap: 0.35rem; white-space: nowrap; transition: opacity var(--tr);">
-            <span style="height: 1px; width: 18px; background: linear-gradient(90deg, transparent, #c9870a);"></span>
+            <span style="height: 1px; width: 18px; background: linear-gradient(90deg, transparent, #C08A2C);"></span>
             <span
-              style="font-family: 'Space Grotesk', sans-serif; font-size: 0.48rem; letter-spacing: 0.18em; text-transform: uppercase; color: #c9870a; font-weight: 600;">Business
+              style="font-family: 'Space Grotesk', sans-serif; font-size: 0.48rem; letter-spacing: 0.18em; text-transform: uppercase; color: #C08A2C; font-weight: 600;">Business
               House Private Limited</span>
-            <span style="height: 1px; width: 18px; background: linear-gradient(90deg, #c9870a, transparent);"></span>
+            <span style="height: 1px; width: 18px; background: linear-gradient(90deg, #C08A2C, transparent);"></span>
           </span>
           <span class="logo-tagline"
             style="font-family: 'Space Grotesk', sans-serif; font-size: 0.4rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--navy); opacity: 0.6; white-space: nowrap; transition: opacity var(--tr);">Mastery
@@ -3116,21 +3140,21 @@
             help you navigate complex challenges and unlock sustainable growth opportunities.</p>
           <div class="contact-cards">
             <a href="tel:+919633253192" class="contact-card">
-              <div class="contact-card-icon">&#128222;</div>
+              <div class="contact-card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B8802A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></div>
               <div>
                 <div class="contact-card-label">Phone</div>
                 <div class="contact-card-value">+91 96332 53192</div>
               </div>
             </a>
             <a href="mailto:info@masteryandprecise.com" class="contact-card">
-              <div class="contact-card-icon">&#9993;</div>
+              <div class="contact-card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B8802A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div>
               <div>
                 <div class="contact-card-label">Email</div>
                 <div class="contact-card-value">info@masteryandprecise.com</div>
               </div>
             </a>
             <a href="https://www.masteryandprecise.com" target="_blank" rel="noopener" class="contact-card">
-              <div class="contact-card-icon">&#127760;</div>
+              <div class="contact-card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B8802A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></div>
               <div>
                 <div class="contact-card-label">Website</div>
                 <div class="contact-card-value">www.masteryandprecise.com</div>
@@ -3141,7 +3165,7 @@
         <div class="contact-form-card reveal-right">
           <div class="form-header">
             <div class="form-badge">
-              <img src="images/logo.png-removebg-preview.png" alt="M&amp;P Logo" width="36" height="35" class="form-badge-logo">
+              <img src="images/mp-mark.svg" alt="Mastery &amp; Precise logo" width="36" height="35" loading="lazy" class="form-badge-logo">
               <span>Business Inquiry</span>
             </div>
             <h3>Connect with Our Advisory Team</h3>
@@ -3360,7 +3384,7 @@
         <div class="footer-brand">
           <div
             style="margin-bottom: 1.5rem; display: flex; flex-direction: column; align-items: flex-start; gap: 0.5rem;">
-            <img src="images/logo.png-removebg-preview.png" alt="M&amp;P Logo"
+            <img src="images/mp-mark-light.svg" alt="Mastery &amp; Precise logo" loading="lazy"
               style="height: 80px; width: auto; object-fit: contain;">
             <div style="display: flex; flex-direction: column; align-items: flex-start; line-height: 1.2;">
               <span
@@ -3368,12 +3392,12 @@
                 &amp; PRECISE</span>
               <span style="display: flex; align-items: center; gap: 0.5rem; white-space: nowrap; margin-top: 3px;">
                 <span
-                  style="height: 1px; width: 24px; background: linear-gradient(90deg, transparent, #c9870a);"></span>
+                  style="height: 1px; width: 24px; background: linear-gradient(90deg, transparent, #C08A2C);"></span>
                 <span
-                  style="font-family: 'Space Grotesk', sans-serif; font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: #c9870a; font-weight: 600;">Business
+                  style="font-family: 'Space Grotesk', sans-serif; font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: #C08A2C; font-weight: 600;">Business
                   House Private Limited</span>
                 <span
-                  style="height: 1px; width: 24px; background: linear-gradient(90deg, #c9870a, transparent);"></span>
+                  style="height: 1px; width: 24px; background: linear-gradient(90deg, #C08A2C, transparent);"></span>
               </span>
               <span
                 style="font-family: 'Space Grotesk', sans-serif; font-size: 0.5rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.45); white-space: nowrap; margin-top: 4px;">Mastery
@@ -3545,13 +3569,13 @@
             const dist = Math.sqrt(dx * dx + dy * dy);
             if (dist < 130) {
               ctx.beginPath(); ctx.moveTo(particles[i].x, particles[i].y); ctx.lineTo(particles[j].x, particles[j].y);
-              ctx.strokeStyle = `rgba(181,102,58,${(1 - dist / 130) * .1})`; ctx.lineWidth = 0.6; ctx.stroke();
+              ctx.strokeStyle = `rgba(192,138,44,${(1 - dist / 130) * .1})`; ctx.lineWidth = 0.6; ctx.stroke();
             }
           }
         }
         particles.forEach(p => {
           ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(181,102,58,${p.alpha})`; ctx.fill();
+          ctx.fillStyle = `rgba(192,138,44,${p.alpha})`; ctx.fill();
           p.x += p.vx; p.y += p.vy;
           if (p.x < 0) p.x = W; if (p.x > W) p.x = 0;
           if (p.y < 0) p.y = H; if (p.y > H) p.y = 0;
